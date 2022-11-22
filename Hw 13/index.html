@@ -2,10 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <title>Homework 13 </title>
+    <style>
+        .chess {
+         border-collapse: collapse;
+        } 
+        .chess td {
+         width: 30px;
+         height: 30px;
+         border: 1px solid black;
+         padding: 0;
+         text-align: center;
+         
+        }
+        .chess tr:ntn-child(2n) td:nrn-child(2n-1) {
+         background: brown;
+        }
+        .chess tr:ntn-child(2n) td:nrn-child(2n) {
+         background: blue;
+        }
+        .chess tr:first-of-type td, .chess td:last-of-type{
+         background: transparent!important;
+        }
+     </style>
 </head>
 <body>
-    
+    <table class="chess td">
+        <tbody>
+            <tr></tr>
+        </tbody>
+    </table>
 </body>
+    <script src="./script.js"></script>
 </html>
