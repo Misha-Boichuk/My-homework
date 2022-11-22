@@ -2,7 +2,8 @@
 // hero = ['Ivan'];
 // native = ['York','Of'];
 // destination = ['Poltava','In'];
-// Используя циклы, if/else, switch/case и методы .push(), .pop(), .unshift(), .shift(), .concat(), .splice(), .reverse() .join():
+// Используя циклы, if/else, switch/case и методы .push(), .pop(), .unshift(), 
+// .shift(), .concat(), .splice(), .reverse() .join():
 
 // 1. Объединить массивы destination, native, hero в общий массив rainbow.
 // 2. Сделать реверс элементов полученного массива rainbow.
@@ -16,4 +17,6 @@
 
 hero = ['Ivan'];
 native = ['York','Of'];
-destination = ['Poltava','In'];
+destination = ['Poltava','In']
+
+strrit =[]
