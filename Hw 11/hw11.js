@@ -15,8 +15,8 @@
 //   что бы вывести его как на прикрепленной картинке rainbow.png.
 
 
-hero = ['Ivan'];
-native = ['York','Of'];
-destination = ['Poltava','In']
+// hero = ['Ivan'];
+// native = ['York','Of'];
+// destination = ['Poltava','In']
 
-strrit =[]
+// strrit =[]
