@@ -20,14 +20,12 @@
 // hero = ['Ivan'];
 // native = ['York','Of'];
 // destination = ['Poltava','In']
+colors = ['red', 'yellow', 'green'];
 
-// colors = ['red', 'yellow', 'green', 'blue', 'pink'];
-
-// circleArr = [];
-
-// for ( i = 0; i < colors.length; i++) {
-//     circleArr.push(`<div class="circle" style="backround-color: ${colors[i]}"></div>`)
-// };
-// console.log(circleArr);
-
-const arr = [];
+for(i = 0; i < colors.length; i++ ) {
+    document.write(`
+       <div class="wrapp">
+           <div class="circle" style "backgraound-color: ${colors[i]}"></div>
+       </div.
+    `)
+}
