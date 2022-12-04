@@ -20,12 +20,29 @@
 // hero = ['Ivan'];
 // native = ['York','Of'];
 // destination = ['Poltava','In']
-colors = ['red', 'yellow', 'green'];
 
-for(i = 0; i < colors.length; i++ ) {
-    document.write(`
-       <div class="wrapp">
-           <div class="circle" style "backgraound-color: ${colors[i]}"></div>
-       </div.
-    `)
+// colors = ['red', 'yellow', 'green'];
+
+// for(i = 0; i < colors.length; i++ ) {
+//     document.write(`
+//        <div class="wrapp">
+//            <div class="circle" style "backgraound-color: ${colors[i]}"></div>
+//        </div.
+//     `)
+// }
+
+animalsTypes = ['dog', 'cat', 'mouse', 'fox', 'bear', 'tiger', 'dolphin', ];
+animalsIcons = ['🐕', '🐱', '🐁', '🦊', '🐻', '🐅', '🐬', '🐳', '❓'];
+
+biggerArr = animalsTypes.length > animalsIcons.length ? animalsTypes : animalsIcons;
+
+for ( i = 0; i < biggerArr.length; i ++) {
+    if (animalsIcons[i] === undefined) {
+        console.log(`${animalsTypes[i]} - ❓`);
+
+    } else  if (animalsTypes[i] === undefined) {
+        console.log(`❓ - ${animalsIcons[i]}`);
+    } else {
+        console.log(`${animalsTypes[i]} - ${animalsIcons[i]}`);
+    }
 }
