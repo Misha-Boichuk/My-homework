@@ -3,43 +3,31 @@
 // Видалити елементи з масиву з 2 по 4 (включно!).
 // У міру змін виводити вміст масиву на сторінку
 
-//arr =prompt([]);
+let arr = [];
 
-// // for (let i = 0; i < array.length; i++) {
-    
-// //     document.write(array)   
-// // }
+let input = prompt("Add fucken you need");
+arr.push(input);
+
+
+//let arr = prompt("Enter your numbers")
+//arr = [7,3,1,5,2,4,8,6];
+
+ for( let j = 0; j < arr.length; j++) {
+	for( let i = 0; i < arr.length -1; i++){
+		if (arr[i] > arr[i + 1]) {            
+			let temp = arr[i]                   
+			arr[i]= arr[i + 1]                  
+			arr[i + 1]= temp 
+           
+		}
+	}                             
+}
+console.log(arr.slice(1,3));
+     
+
+
+
  
-// for (i = 0; i <= arr.length; i++) {
-// 	for (j = 0; j <= i; j++) {
-// 		document.write(i);
-// 	}
-// }	
-
-
-// for(let i=0, tmp;i<mas.length-1;i++){
-//     for(let j=0;j<mas.length-1;j++){
-//         if(mas[j]>mas[j+1]){
-//             tmp=mas[j];
-//             mas[j]=mas[j+1];
-//             mas[j+1]=tmp;
-//         }
-//         document.write(i)
-//     }
-// }
     
-//     alert( mas );
 
-// var mas=[10,2,5,3,7];
 
-// for(var i=0, tmp;i<mas.length-1;i++){
-// for(var j=0;j<mas.length-1;j++){
-// 	if(mas[j]>mas[j+1]){
-// 		tmp=mas[j];
-// 		mas[j]=mas[j+1];         // працює але треба prompt зробити
-// 		mas[j+1]=tmp;
-// 	}
-// }
-// }
-
-// document.write( mas );
