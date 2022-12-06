@@ -3,14 +3,13 @@
 // Видалити елементи з масиву з 2 по 4 (включно!).
 // У міру змін виводити вміст масиву на сторінку
 
-let arr = [];
-
-let input = prompt("Add fucken you need");
-arr.push(input);
-
 
 //let arr = prompt("Enter your numbers")
 //arr = [7,3,1,5,2,4,8,6];
+
+let arr = [];
+let input = prompt("kiss me one  more time");
+arr.push(input);
 
  for( let j = 0; j < arr.length; j++) {
 	for( let i = 0; i < arr.length -1; i++){
@@ -22,7 +21,7 @@ arr.push(input);
 		}
 	}                             
 }
-console.log(arr.slice(1,3));
+console.log(arr);
      
 
 
