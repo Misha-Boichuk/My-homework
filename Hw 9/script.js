@@ -5,11 +5,10 @@
 
 
 //let arr = prompt("Enter your numbers")
-//arr = [7,3,1,5,2,4,8,6];
+arr = [7,3,1,5,2,4,8,6];
 
-let arr = [];
-let input = prompt("kiss me one  more time");
-arr.push(input);
+// let input = prompt("kiss me one  more time");
+// let arr =input.push('');
 
  for( let j = 0; j < arr.length; j++) {
 	for( let i = 0; i < arr.length -1; i++){
