@@ -3,12 +3,12 @@
 // Видалити елементи з масиву з 2 по 4 (включно!).
 // У міру змін виводити вміст масиву на сторінку
 
+let srg = [];
 
-//let arr = prompt("Enter your numbers")
-arr = [7,3,1,5,2,4,8,6];
+ for(let i = 0; i < 10; i++)
+    srg.push(prompt("Enter a value"));
 
-// let input = prompt("kiss me one  more time");
-// let arr =input.push('');
+ let arr = srg  
 
  for( let j = 0; j < arr.length; j++) {
 	for( let i = 0; i < arr.length -1; i++){
@@ -16,16 +16,10 @@ arr = [7,3,1,5,2,4,8,6];
 			let temp = arr[i]                   
 			arr[i]= arr[i + 1]                  
 			arr[i + 1]= temp 
-           
+			
 		}
-	}                             
-}
-console.log(arr);
-     
+	}                          
+ } 
+ let af = arr.splice(1,3)
 
-
-
- 
-    
-
-
+document.write(arr);
