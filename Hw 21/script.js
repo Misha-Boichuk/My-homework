@@ -24,3 +24,43 @@
   <td>Task duration: 3 hours</td>
   <td>Task amount: $300</td>
 </tr> */
+
+let amount = 100;
+let monday = [
+  ['Write a tutorial',180],
+  ['Some web development',120]
+];
+let tuesday = [
+  ['Keep writing that tutorial',240],
+  ['Some more web development',360],
+   ['A whole lot of nothing',240]
+];
+
+const days = monday.concat(tuesday)
+  .map(function(day) {
+    day[1] /= 60;
+    return day;
+  }) 
+  .filter(function(day) {
+    return day[1] > 2;
+  })
+  .map(function(day) {
+    const dayAmount = day[1] * amount;
+    day.push(dayAmount);
+
+    return day;
+  })
+  .map(function(days) {
+    return `
+     <tr>
+      <td>Task name:${days}/td>
+      <td>Task duration:${days[1]} hours</td>
+      <td>Task amount: ${days[2]}</td>
+    </tr> 
+    ` 
+  })
+  .join("")
+
+document.write(`
+   <table>${days}</table>
+`)
