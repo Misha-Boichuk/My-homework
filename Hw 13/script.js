@@ -11,49 +11,7 @@
 // Все теги рендерим с помощью js.
 // Внешний вид задания НЕ важен, важен только JS-код))
 
-// Chess
-// TRs = [];
-// alphabet = "abcdefgh";
-// figures = ["rook", "horse", "bishop", "queen", "king"];
-// figures = figures.concat(figures.slice(0,3).reverse());
-
-// for(tr = 10; tr >= 1; tr--) {
-//     color = tr >= 4 ? "black" : "white";
-//     TDs = [];
-
-//     for(td = 1; td <= 10; td++) {
-//         data = "";
-//         if((tr === 1 || tr === 10) && td !== 1 && td !== 10) {
-//             data = alphabet[td -2];
-//         }
-//         if((td === 1 || td === 10) && tr !== 1 && tr !== 10) {
-//             data = tr - 1;
-//         }
-//         if((tr === 3 || tr === 8) && td !== 1 && td !== 10) {
-//             data = `<img src="images/chass/${color}/pawn.svg">`
-//         }
-//         if((tr === 2 || tr === 9) && td !== 1 && td !== 10) {
-//             data = `<img src="images/chass/${color}/${figures[td-2]}.svg">`
-//         }
-      
-//         TDs.push(`<td>${data}</td>`)
-//     }
-//     TRs.push(`<tr>${TDs.join("")}</tr>`)
-// } 
-// document.write(`<table class="chess">${TRs.join("")}</table>`);
-
-for (i = 0; i < suits.length; i++) { 
-    cards.push(` 
-    <div class="card card--person"> 
-    <div class="card__info"> 
-        T  
-        <img src="images/${suits[i]}.svg" alt="${suits[i]}"> 
-    </div> 
-    <img class="person" src="images/${suits[i]}.svg" alt="${suits[i]}"> 
-    <div class="card__info"> 
-        T  
-        <img src="images/${suits[i]}.svg" alt="${suits[i]}"> 
-    </div> 
-    </div> 
-    `);
-}
+card = [];
+number [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "T"];
+suit = [`clubs`, `spades`, `diamond`, `hearts`];
+icon
