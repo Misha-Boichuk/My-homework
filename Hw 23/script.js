@@ -10,38 +10,36 @@
 
 // let objFirst = { x: 10, y: 20};
 // let objSecond = {y: 100, z: 30};
-const obj1= {
+const objOne= {
     x: 10,
     y: 20,
 };
 
-const obj2 = {
+const objTwo = {
     z: 30,
 };
 
-const objA = {
+const objTree = {
     x: 10,
 };
 
-const objB = {
+const objFour = {
     x: 20,
     y: 30,
 }
 
-function assignObject(objA, objB){
+function assignObject(objTree, objFour){
     let newObj = {};
 
-    for( let key in objA) {
-        newObj[key] = objA[key];
+    for( let key in objTree) {
+        newObj[key] = objTree[key];
     }
-    for(let key in objB) {
-        newObj[key] = objB[key];
+    for(let key in objFour) {
+        newObj[key] = objFour[key];
     }
 
-    return newObj;                  //Object.assign({}, obj1, obj2);
+    return newObj;                 
 }
 
-console.log(assignObject(obj1, obj2));
-console.log(assignObject(objA, objB));
-
-//console.log(assignObject(objFirst, objSecond));
+console.log(assignObject(objOne, objTwo));
+console.log(assignObject(objTree, objFour));
