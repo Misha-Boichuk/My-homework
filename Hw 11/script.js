@@ -1,8 +1,11 @@
+//ДЗ 11. Rainbow render
+
 // Дано: 
 // hero = ['Ivan'];
 // native = ['York','Of'];
 // destination = ['Poltava','In'];
-// Используя циклы, if/else, switch/case и методы .push(), .pop(), .unshift(), 
+// Используя циклы, if/else, switch/case и методы 
+// .push(), .pop(), .unshift(), 
 // .shift(), .concat(), .splice(), .reverse() .join():
 
 // 1. Объединить массивы destination, native, hero в общий массив rainbow.
@@ -16,22 +19,10 @@
 //    которые помогут вам привести массив к такому виду,
 //   что бы вывести его как на прикрепленной картинке rainbow.png.
 
-
 hero = ['Ivan'];
 native = ['York','Of'];
-destination = ['Poltava','In']
+destination = ['Poltava','In'];
 
-let rainbow = hero.concat('York', 'Of', 'Poltava', 'In');
-rainbow.reverse();
-
-// colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet' ]
-// circleArr = [];                            
-//     circleArr.push(`<div class="circle" style="background-color: ${colors[i]}"></div>`)
-
-// document.write(`                         
-//     <div class="wrapp"> 
-//        ${circleArr.join(" ")}
-//     </div>
-// `)
-
+let rainbow = hero.concat(native,destination);
+   
 console.log(rainbow);
