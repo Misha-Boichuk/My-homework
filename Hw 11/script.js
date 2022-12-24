@@ -10,6 +10,7 @@
 
 // 1. Объединить массивы destination, native, hero в общий массив rainbow.
 // 2. Сделать реверс элементов полученного массива rainbow.
+
 // 3. Изменить/добавить элементы массива rainbow так, что бы в итоге получился 
 //    массив вида ['Richard','Of','York','Gave','Battle','In','Vain'];
 // 4. Вывести элементы полученного массива в html в виде, который представлен в 
@@ -23,6 +24,24 @@ hero = ['Ivan'];
 native = ['York','Of'];
 destination = ['Poltava','In'];
 
-let rainbow = hero.concat(native,destination);
-   
+let rainbow = destination.concat(native,hero);
+rainbow.reverse()
+
+document.write(rainbow);
 console.log(rainbow);
+
+
+// colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet' ];
+
+// circleArr = [];                            
+//     circleArr.push(`<div class="circle" style="background-color: ${colors[i]}"></div>`)
+
+// document.write(`                         
+//     <div class="wrapp"> 
+//        ${circleArr.join(" ")}
+//     </div>
+// `)
+
+
+
+
