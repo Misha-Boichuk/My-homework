@@ -1,6 +1,6 @@
 // Реалізуйте функцію generateKey(length, characters),
 // яка повертає рядок випадкових символів із 
-//набору characters довжиною length. span>
+// набору characters довжиною length. span>
 
 // Наприклад:
 
@@ -11,7 +11,14 @@
 
 const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
-function generateKey(length, characters)
-     
+function generateKey(length) {
+    let result = ' ';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
 
-generateKey()
+    return result;
+}
+
+console.log(generateKey(15));
