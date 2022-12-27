@@ -1,3 +1,5 @@
+// ДЗ 17. Functions
+
 // Дано две функции:
 
 // function main (a, b, c) { 
