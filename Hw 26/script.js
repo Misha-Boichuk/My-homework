@@ -142,4 +142,32 @@ let cosmeticsProducts = [
 	}
 ];
 
-cc
+Array.prototype.renderProducts = function(folder) {
+    const Trs = this
+	  .map(function(product) {
+         return `
+            <tr>
+               <td><img src="images26/${folder}/${product.type}.svg" alt="${product.type}" width="50"></td>
+               <td>${product.type}</td>
+               <td>${product.price}</td>
+            `
+ }).join("");
+
+document.write(`
+    <table> 
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+		<tbody>${Trs}</tbody>  
+    </table>
+          
+`)
+}
+
+kitchenProducts.renderProducts("kitchen");
+cosmeticsProducts.renderProducts("cosmetics");
+devicesProducts.renderProducts("devices")
