@@ -36,6 +36,7 @@ sports = [
 ]
 
 fruits = [];
+
 summer = sports.slice(5, 11);
 winter = sports.slice(0, 5);
 
