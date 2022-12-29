@@ -142,28 +142,4 @@ let cosmeticsProducts = [
 	}
 ];
 
-Array.prototype.renderProducts = function(folder) {
-    const Trs = this.map(function(product) {
-        return `
-           <tr>
-               <td><img src="images/${folder}/${product.type}.svg"></td>
-               <td>${product.type}</td>
-               <td>${product.price}</td>
-            `
- })
-document.write(`
-    <table> 
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-    </table>
-    <tbody>${Trs}</tbody>        
-`)
-}
-
-kitchenProducts.renderProducts("kitchen");
-cosmeticsProducts.renderProducts("cosmetics");
+cc
