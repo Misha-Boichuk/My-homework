@@ -80,3 +80,90 @@
 // Пример вывода прикреплен products.png
 
 // Исходные картинки находятся в прикрепленном архиве images.zip
+
+let kitchenProducts = [
+	{
+		type: 'grater',
+		price: 10
+	},
+	{
+		type: 'pastry-bag',
+		price: 25
+	},
+	{
+		type: 'scale',
+		price: 5
+	},
+	{
+		type: 'whisk',
+		price: 15
+	}
+];
+
+let devicesProducts = [
+	{
+		type: 'desktop',
+		price: [100,1000]
+	},
+	{
+		type: 'laptop',
+		price: [50,1500]
+	},
+	{
+		type: 'smartphone',
+		price: [80,2000]
+	},
+	{
+		type: 'tablet',
+		price: [20,1300]
+	}
+];
+
+let cosmeticsProducts = [
+	{
+		type: 'blush',
+		price: 100
+	},
+	{
+		type: 'eyeshadow',
+		price: 50
+	},
+	{
+		type: 'lipstick',
+		price: 80
+	},
+	{
+		type: 'nail-polish',
+		price: 200
+	},
+	{
+		type: 'perfume',
+		price: 300,
+	}
+];
+
+Array.prototype.renderProducts = function(folder) {
+    const Trs = this.map(function(product) {
+        return `
+           <tr>
+               <td><img src="images/${folder}/${product.type}.svg"></td>
+               <td>${product.type}</td>
+               <td>${product.price}</td>
+            `
+ })
+document.write(`
+    <table> 
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+    </table>
+    <tbody>${Trs}</tbody>        
+`)
+}
+
+kitchenProducts.renderProducts("kitchen");
+cosmeticsProducts.renderProducts("cosmetics");
