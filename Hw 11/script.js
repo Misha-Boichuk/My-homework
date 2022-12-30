@@ -35,20 +35,19 @@
 // console.log(newRainbow);
 
 
-// colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet' ];
-//         for(let i = 0; i < colors.length; i++)
-//           document.write(colors[i])  
+colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 
-// circleArr = [];    
-                         
-//     circleArr.push(`<div class="circle" style="background-color: ${colors[i]}"></div>`)
-
-// document.write(`                         
-//     <div class="wrapp"> 
-//        ${circleArr.join(" ")}
-//     </div>
-// `);
-
-
+circleArr = [];
+ 
+for(i = 0; i < colors.length; i++) {
+    circleArr.push(`
+      <div class="circle" style="background-color:${colors[i]}"></div>
+ `)  
+}
+document.write(`
+<div class="wrapp">
+     ${circleArr.join(" ")}
+</div>
+`);
 
 
