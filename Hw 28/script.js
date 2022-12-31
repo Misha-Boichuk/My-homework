@@ -19,25 +19,26 @@ const OPERATIONS = {
 
 class SuperMath {
     constructor() {
-        this.input()
+        this.input();
     }
 
     input() {
         do {
-           this.znak = +prompt(`Enter x`)
+           this.x = +prompt(`Enter x`)
         } while(isNaN(this.x));
+
         do {
-           this.znak = +prompt(`Enter y`)
+           this.y = +prompt(`Enter y`)
         } while(isNaN(this.y));
+
         do {
-           this.znak = +prompt(`Enter znak: ${this.getOperations()}`)
+           this.znak = prompt(`Enter znak: ${this.getOperations()}`)
         } while(!OPERATIONS[this.znak]);
     } 
 
     check() {
-        let userApproved = confirm(`Do you want make operation ${this.x} ${this.y} ${this.znak}`)
-        this.input();
-        return OPERATIONS[this.znak](this.x, this. y);
+        let userApproved = confirm(`Do you want make operation ${this.x} ${this.znak} ${this.y} `);
+        return userApproved ? OPERATIONS[this.znak](this.x, this. y) : this.input().check();
     }
 
     getOperations() {
@@ -51,6 +52,6 @@ class SuperMath {
 
 }
 
-const obj = new SuperMath(10, 20, "+")
+const obj = new SuperMath();
 
 console.log(obj.check());
