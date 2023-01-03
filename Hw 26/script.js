@@ -147,7 +147,7 @@ Array.prototype.renderProducts = function(folder) {
 	  .map(function(product) {
          return `
             <tr>
-               <td><img src="images26/${folder}/${product.type}.svg" alt="${product.type}" width="50"></td>
+               <td><img src="images/${folder}/${product.type}.svg" alt="${product.type}" width="50"></td>
                <td>${product.type}</td>
                <td>${product.price}</td>
             `
@@ -157,7 +157,7 @@ document.write(`
     <table> 
         <thead>
             <tr>
-                <th>Image</th>
+                <th>Images</th>
                 <th>Name</th>
                 <th>Price</th>
             </tr>
@@ -165,9 +165,9 @@ document.write(`
 		<tbody>${Trs}</tbody>  
     </table>
           
-`)
+`);
 }
 
 kitchenProducts.renderProducts("kitchen");
 cosmeticsProducts.renderProducts("cosmetics");
-devicesProducts.renderProducts("devices")
+devicesProducts.renderProducts("devices");
