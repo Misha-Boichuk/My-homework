@@ -20,19 +20,17 @@
 //    которые помогут вам привести массив к такому виду,
 //   что бы вывести его как на прикрепленной картинке rainbow.png.
 
-// hero = ['Ivan'];
-// native = ['York','Of'];
-// destination = ['Poltava','In'];
+hero = ['Ivan'];
+native = ['York','Of'];
+destination = ['Poltava','In'];
 
-// let rainbow = destination.concat('Battle','Gave', native, hero,);
-// rainbow.reverse()
+let rainbow = destination.concat('Battle','Gave', native, hero,);
+rainbow.reverse()
 
-// let newRainbow = rainbow.join(" ");                // Ivan Of York In Poltava
+let newRainbow = rainbow.join(" ");       
 
+document.write(newRainbow);
 
-
-// document.write(newRainbow);
-// console.log(newRainbow);
 
 
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
@@ -44,6 +42,7 @@ for(i = 0; i < colors.length; i++) {
       <div class="circle" style="background-color:${colors[i]}"></div>
  `)  
 }
+
 document.write(`
 <div class="wrapp">
      ${circleArr.join(" ")}
