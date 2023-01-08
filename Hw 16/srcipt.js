@@ -11,13 +11,16 @@
 // sum(20) = 28
 
 
-function A(x) {
-    function B(y) {
-      function C(z) {
-        console.log(x + y + z);
-      }
-      C(20);                      // return 28 
-    }
-    B(5);
-  }
-  A(3); 
+// function A(x) {
+//     function B(y) {
+//       function C(z) {
+//         console.log(x + y + z);
+//       }
+//       C(20);                      // return 28 
+//     }
+//     B(5);
+//   }
+//   A(3); 
+
+
+

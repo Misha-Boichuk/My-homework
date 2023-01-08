@@ -27,13 +27,28 @@ let arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37,
 //   console.log(result);
 
 
-  let negSum = 0;
-  const novaArr = arr
+  // let negSum = 0;
+  // const novaArr = arr
+  //   .filter(function(val) {
+  //     return val < 0;                     // сума непозитивних буде -357 !
+  //   }) 
+  //   .forEach(function(val) {
+  //     negSum = val;
+  //   })
+  
+  //   console.log(negSum);
+
+    let result = 0;
+    const newArr = arr 
     .filter(function(val) {
-      return val < 0;                     // сума непозитивних буде -357 !
-    }) 
+      if( val > 0 ) {
+        return val;
+      } else ( val < 0 )
+        return val;
+  
+    })
     .forEach(function(val) {
-      negSum += val;
+      result += val; 
     })
   
-    console.log(negSum);
+    console.log(result);

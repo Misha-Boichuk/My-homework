@@ -1,4 +1,4 @@
-// ДЗ 17. Functions
+         // ДЗ 17. Functions
 
 // Дано две функции:
 
@@ -19,9 +19,27 @@
 
 
 // function main (a, b, c) { 
-  
 // }
 
 // function sum (a, b) { 
 //     return a + b; 
 // }
+
+// console.log(main(2, 3,));
+
+
+
+// let value = 3;
+
+// function getValue() {
+//     return value++;
+// }
+
+// function add(first, second = getValue()) {
+//     return first + second;
+// }
+
+// console.log(add(1, 1));     // 2
+// console.log(add(1));        // 6
+// console.log(add(1));        // 7
+
