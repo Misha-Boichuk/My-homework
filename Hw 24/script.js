@@ -88,3 +88,13 @@ let dcHeroes = [
 		name: "Deadpool"
 	}
 ];
+
+String.prototype.forEach = function() {
+    for(let i = 0;  i < this.length; i++) {
+        console.log(this[i]);
+    }
+	`img/${name.toLowerCase()}/${this.name.toLowerCase()}`
+}
+
+marvelHeroes.forEach();
+dcHeroes.forEach();
