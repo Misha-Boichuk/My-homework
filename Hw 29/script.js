@@ -28,6 +28,8 @@
 // Заданную html-разметку и css-классы для каждого блока можете править как хотите) 
 // Главное – визуально отобразить так, как на картинке.
 
+// class User = users;
+
 const roles = {
 	admin: "https://www.flaticon.com/svg/static/icons/svg/1424/1424453.svg",
 	student: "https://www.flaticon.com/svg/static/icons/svg/1424/1424424.svg",
@@ -128,7 +130,27 @@ const users = [
 				"title": "Java Enterprise",
 				"score": 85,
 				"studentsScore": 85
-			}
-		]
+			},
+		],
+	},
+];
+
+class Lector extends Person {
+	constructor(args){
+		super(args);
 	}
-]
+ 
+
+    renderCourses() {
+	    let allTitle = this.courses
+	    .map(el => { 
+		   return `<div class="user_courses--course ${this.role}"
+		   <p>Title: <br>Front-end Pro</br></p>
+		   <p>Lector's score: <span class="${gradation(gradation, el.score)}">${grageUser(gradation, el.score)}</span></p>
+		   <p>Average student's score: <span class="${grageUser(gradation, el.score)}">${grageUser(gradation, el.score)}</span></p>
+		   </div>`;
+	    })
+	      .join("")
+	      return `<div class="user_courses admin--info">${allTitle}</div>`;
+	}
+}
