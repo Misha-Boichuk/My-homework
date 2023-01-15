@@ -31,9 +31,9 @@
 // class User = users;
 
 const roles = {
-	admin: "https://www.flaticon.com/svg/static/icons/svg/1424/1424453.svg",
-	student: "https://www.flaticon.com/svg/static/icons/svg/1424/1424424.svg",
-	lector: "https://www.flaticon.com/svg/static/icons/svg/1424/1424450.svg"
+	admin: "Beatuful",
+	student: "",
+	lector: ""
 };
 
 const gradation = {
@@ -47,7 +47,7 @@ const users = [
 	{
 		name: "Jack Smith",
 		age: 23,
-		img: "https://www.flaticon.com/svg/static/icons/svg/2922/2922522.svg",
+		img: "",
 		role: "student",
 		courses: [
 			{
@@ -63,13 +63,13 @@ const users = [
 	{
 		name: "Amal Smith",
 		age: 20,
-		img: "https://www.flaticon.com/svg/static/icons/svg/2922/2922656.svg",
+		img: "",
 		role: "student"
 	},
 	{
 		name: "Noah Smith",
 		age: 43,
-		img: "https://www.flaticon.com/svg/static/icons/svg/2922/2922616.svg",
+		img: "",
 		role: "student",
 		courses: [
 			{
@@ -81,7 +81,7 @@ const users = [
 	{
 		name: "Charlie Smith",
 		age: 18,
-		img: "https://www.flaticon.com/svg/static/icons/svg/2922/2922688.svg",
+		img: "",
 		role: "student",
 		courses: [
 			{
@@ -96,7 +96,7 @@ const users = [
 	{
 		name: "Emily Smith",
 		age: 30,
-		img: "https://www.flaticon.com/svg/static/icons/svg/2922/2922565.svg",
+		img: "",
 		role: "admin",
 		courses: [
 			{
@@ -118,7 +118,7 @@ const users = [
 	{
 		name: "Leo Smith",
 		age: 253,
-		img: "https://www.flaticon.com/svg/static/icons/svg/2922/2922719.svg",
+		img: "",
 		role: "lector",
 		courses: [
 			{
@@ -140,7 +140,6 @@ class Lector extends Person {
 		super(args);
 	}
  
-
     renderCourses() {
 	    let allTitle = this.courses
 	    .map(el => { 
@@ -154,3 +153,34 @@ class Lector extends Person {
 	      return `<div class="user_courses admin--info">${allTitle}</div>`;
 	}
 }
+
+const ROLES = {
+	"student": user => new Student(user),
+	"admin": user => new Admin(user),
+	"lector": user => new Lector(user)
+}
+
+function renderUsers (array) {
+	let users = array 
+	.map(user => ROLES[user.role] ? ROLES[user.role](user) : new Person(user))
+	.map(user => {
+		console.log(user);
+		return user;
+	})
+	.map(user => user.renderInfo())
+	.join("");
+
+	usersBlock.innerHTML = users;
+}
+renderUsers(users);
+
+function grageUser(gradationObject, mark) {
+	let grade = `test Grade`
+	for(let key in gradationObject) {
+		if (mark <= key) {
+			grade = gradationObject[key]
+			break
+		}
+	}
+	return grade
+};
