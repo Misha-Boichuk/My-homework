@@ -16,29 +16,21 @@
 // и в качестве входящего значение принимает результат работы функции sum.
 // Функция main должна возвращать результат функции аргумента c, если он есть, либо результат функции sum.
 
-
-
-//  function main (a, b, c) { 
-    
-//  }
-
-//  function sum (a, b ) { 
+// function main (a, b, c) { 
   
-//      return a + b; 
-//  }
+// }
 
-// console.log(sum(2, 3));
+// function sum (a, b) { 
+//     return a + b; 
+// }
+ 
+function main(a, b, c ) {
+    let numSum = sum(a, b);
+    console.log(numSum);
+}
 
+function sum(a, b) {
+    return a + b;
+}
 
-
-
-//let value = 3;
-//function getValue() {
-    //return value++;
-//}
- //function add(first, second = getValue()) {
-    //return first + second;
-//}
-//console.log(add(2, 3));     // 5
-    
-
+main(2, 3);
