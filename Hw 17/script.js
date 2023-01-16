@@ -18,16 +18,16 @@
 
 
 
- function main (a, b, c) { 
+//  function main (a, b, c) { 
     
- }
+//  }
 
- function sum (a, b ) { 
+//  function sum (a, b ) { 
   
-     return a + b; 
- }
+//      return a + b; 
+//  }
 
-console.log(sum(2, 3));
+// console.log(sum(2, 3));
 
 
 
