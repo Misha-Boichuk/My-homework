@@ -10,3 +10,8 @@
 
 // Let it be fun for you!
 
+function hello () {
+    console.log(`мої Вітання <<("_")>>  !!`)
+}
+
+hello();
