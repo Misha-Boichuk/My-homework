@@ -23,4 +23,11 @@
 //   A(3); 
 
 
-
+function sum(a) {
+    return function(b) {
+        return function (c) {
+            return sum = a + (c + b);
+        }                                                // повертає значення, але не впернений
+    }
+}
+console.log(sum(3)(5)(20));
