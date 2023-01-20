@@ -10,14 +10,37 @@
             margin: 20px;
             margin-top: 150px;
         }
-        
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .item-container {
+            padding: 150px, 30px, 50px;
+        }
+
+        .card {
+            padding: 20px;
+            border: 1px solid saddlebrown;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            display:flex;
+            align-items: start;
+        }
+
+        .card-right {
+            min-width: 300px;
+            margin-left: 20px;
+            align-self: flex-end;
+        }
+
         header {
             position: fixed;
             top: 0;
             left: 0;
             height: 100px;
             width: 100%;
-            background-color: rgb(230, 114, 205);
+            background-color: rgb(230, 114, 114);
             padding: 20px;
             display: flex;
             justify-content: flex-end;
@@ -38,6 +61,8 @@
     <header>
          <input type="text" id="search" placeholder="Find...">
     </header>
+     <div class="item-container"></div>
+
     <script src="./practik.js"></script>
 </body>
 </html>
