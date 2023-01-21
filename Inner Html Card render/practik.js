@@ -50,9 +50,11 @@ let magicItems = [
 ];
 
 const innerDiv = document.querySelector(".item-container");
-const search = document.getElementById("search")
+const search = document.getElementById("search");
+const create = document.getElementById("create");
+const close = document.getElementById("close");
 
-function renderMargicitems(magicItems) {
+function renderMargicItems(magicItems) {
   innerDiv.innerHTML = "";
 
 
@@ -92,7 +94,41 @@ search.addEventListener("input", () => {
   .filter(item => item.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1);
       
 
-   renderMargicitems(filterMagicItems);
+   renderMargicItems(filterMagicItems);
 });
 
-renderMargicitems(magicItems);
+renderMargicItems(magicItems);
+
+function toggElement(el) {
+  const modal = document.querySelector(".modal-container");
+  modal.classList.remove("d-none");
+}
+
+create.addEventListener("click", () => {
+  toggElement();
+  const add = document.getElementById("add");
+
+  add.addEventListener("click", () => {
+      createNewMagicItem();                 // ця функція не працює 
+      toggElement();
+    });
+})
+
+close.addEventListener("clock", () => {
+  toggElement();
+});
+
+function createNewMagicItem() {
+  const name = document.getElementById("name").value;
+  const type = document.getElementById("type").value;
+  const quality = document.getElementById("quality").value;
+  const description = document.getElementById("description").value;
+
+  const newItem = { name, type, value, quality, description };
+
+  magicItems.unshift(newItem);
+  renderMargicItems(magicItems);
+}
+
+
+//////////////// не працює кнопка close  і підкреслює value

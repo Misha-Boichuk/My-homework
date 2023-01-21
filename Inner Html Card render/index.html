@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Practik </title>
+    <title>Карточки та модальне вікно </title>
     <style>
         body {
             margin: 20px;
@@ -47,22 +47,86 @@
             align-items: center; 
         }
 
-        #search {
-            width: 350px;
+        #search,
+        #create {
+            width: 300px;
             height: 50px;
             border: none;
             padding: 10px, 20px;
             font-size: 18px;
             border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    
+        .modal-container {
+            width: 100vw;
+            height: 100vh;
+            position:fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.185); 
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal {
+            width: 500px;
+            padding: 20px;
+            background-color: rgb(159, 80, 233);
+            border-radius: 10px;  
+        }
+        .modal > input,
+        .modal > button {
+            width: 100%;
+            height: 50px;
+            border: 1px solid seagreen;
+            padding: 10px, 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            padding: 10px, 20px;
+        }
+        
+        .modal > button {
+            background-color: salmon;
+            color: white;
+        }
+
+        .d-none {
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>
-         <input type="text" id="search" placeholder="Find...">
+        <input type="text" id="search" placeholder="Find...">
+        <button id="create">Create magic item</button> 
     </header>
      <div class="item-container"></div>
 
+     <div class="modal-container d-none">
+        <div class="modal">
+           <input type="text" placeholder="Name">
+           <input type="text" placeholder="Type">
+           <input type="text" placeholder="Quality">
+           <textarea placeholder="Description"></textarea>
+           <button id="add">Add</button>
+           <button id="close">Close</button>
+        </div>
+     </div>
     <script src="./practik.js"></script>
 </body>
 </html>
