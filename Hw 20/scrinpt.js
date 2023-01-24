@@ -4,6 +4,7 @@
 // Знайти суму та кількість позитивних елементів.
 // Знайти мінімальний елемент масиву та його порядковий номер.
 // Знайти максимальний елемент масиву та його порядковий номер.
+
 // Визначити кількість негативних елементів.
 // Знайти кількість непарних позитивних елементів.
 // Знайти кількість парних позитивних елементів.
@@ -13,53 +14,60 @@
 // Знайти найбільший серед елементів масиву, остальні обнулити.
 
 let arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 
-            46, 4, -51, 27,-63, 4, -54, 76, -4, 12, -35, 4, 47];
-
-let min = (values) => values.reduce((x, y) => Math.min(x, y));
-console.log(min(arr));
-
-let max = (values) => values.reduce((x, y) => Math.max(x, y));
-console.log(max(arr));
-
-//////////////////////////////////////////////////////////////////////
-
-let  arrP = arr.filter(function(e){return e>0;});   // retur + element 
- console.log(arrP);  
-
-let  arrM = arr.filter(function(e){return e<0;});    // return  - element 
-console.log(arrM);     
-////////////////////////////////////////////////////////////////////////
+          46, 4, -51, 27,-63, 4, -54, 76, -4, 12, -35, 4, 47];
+  
 
 let result = 0;
 const newArr = arr
   .filter(function(val) {
-    return val > 0;                // сума позитивних буде 438 !
+    return val > 0;         
   }) 
   .forEach(function(val) {
     result += val;
-  })
-
-  console.log(result);
-////////////////////////////////////////////////////////////
-
-  // let negSum = 0;
-  // const novaArr = arr
-  //   .filter(function(val) {
-  //     return val < 0;               // сума непозитивних буде -357 !
-  //   }) 
-  //   .forEach(function(val) {
-  //     negSum = val;
-  //   })
+  })                // сума позитивних буде 438 !
   
-  //   console.log(negSum);
-    //////////////////////////////////////////////////////////////
+  console.log(result);
+///////////////////////////////////////////////////////////////////
 
-  let resultAll = arr.reduce(function(sum, current) {
-    return sum + current;
-  }, 0);
-  console.log(resultAll );  //  All sum: 81 
+console.log(`${Math.max(...arr)} порядковий номер ${arr.indexOf(76)} `);  // 76
+console.log(`${Math.min(...arr)} порядковий номер ${arr.indexOf(-63)} `);  // -63
 
-/////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+let  Negative = arr.filter((item) => item <0 );
+console.log(`Кільk негат елем: ${Negative.length}`);   // кількість негативних елементів 10  
+////////////////////////////////////////////////////////////////////////
+// const newArr = arr 
+//   .filter(function(val) {
+//     return val >3;
+//   })
+//   .map(function(val) {
+//     return val ;
+//   })                  // повертає масив  позитивні
+
+//   console.log(newArr);
+/////////////////////////////////////////////
+// 
+////////////////////////////////////////////////////////////
+// let negSum = 0;
+// const novaArr = arr
+//   .filter(function(val) {
+//     return val < 0;         
+//   }) 
+//   .forEach(function(val) {
+//     negSum += val;
+//   })               // сума непозитивних буде -357 !
+
+//   console.log(negSum);
+  
+  ////////////////////////////////////////////////////////////////
+
+//   let resultAll = arr.reduce(function(sum, current) {
+//     return sum + current;
+//   }, 0);
+//   console.log(resultAll );  //  All sum: 81 
+
+// /////////////////////////////////////////////////////////////////////////
 //    function sum(a, b){
 //     return a + b;
 //     }
@@ -67,32 +75,15 @@ const newArr = arr
 // console.log("All sum: "+s);  // 81
 
 ///////////////////////////////////////////////////////////////////////
-// arr.forEach((num, index) => {
-//     return arr[index] = num ;   /// повертає масив 
-// });
-// console.log(arr);
 
-// let doubled = arr.map(num => {
-//     return num ;
-// });                           // повертає маисв !!
-// console.log(doubled);
 
 //////////////////////////////////////////////////////////////////
-// let negSum = 0;
-// const novaArr = arr
-//   .filter(function(val) {
-//     return val < 0;          // сума непозитивних буде -357 !
-//   }) 
-//   .forEach(function(val) {
-//     negSum += val;
-//   })
 
-//   console.log(negSum);
 ///////////////////////////////////////////////////////
 
 // function isPositive(number) {
 //   return number > 0;
 // }
 
-// console.log( arr.every(isPositive) ); // false, не все положительные
-// console.log( arr.some(isPositive) ); // true, есть хоть одно положительное
+// console.log( arr.every(isPositive) ); // false, не всі позит
+// console.log( arr.some(isPositive) ); // true, є хоть 1 позит елем
