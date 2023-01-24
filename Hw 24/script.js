@@ -22,18 +22,19 @@
 // 	}
 // ];
 
-
 // И папка с картинкам images, в которой находятся две папки с иконками супер-героев (см. в Прикрепленных материалах):
 // marvel
 // dc
 
 // Задача:
-
 // В Array.prototype добавить свойство с названием heroesRender в значении которого находится функция.
-// Даная функция может вызываться в контексте любого массива и в качестве входящего аргумента принимает название папки ('dc', 'marvel'), с которой будут подтягиваться иконки супер-героев этого массива. Пример:
+// Даная функция может вызываться в контексте любого массива и в качестве входящего аргумента принимает название папки ('dc', 'marvel'), 
+// с которой будут подтягиваться иконки супер-героев этого массива.
+// Пример:
 // dcHeroes.heroesRender('dc');
 // marvelHeroes.heroesRender('marvel');
-// Функция возвращает таблицу, в которой выводится информация по каждому из вложенных объектов. Строка каждого объекта имеет вид:
+// Функция возвращает таблицу, в которой выводится информация по каждому из вложенных объектов.
+//  Строка каждого объекта имеет вид:
 // <tr>
 // 	<td>Thor</td>
 // 	<td>
@@ -88,13 +89,35 @@ let dcHeroes = [
 		name: "Deadpool"
 	}
 ];
-
-String.prototype.forEach = function() {
-    for(let i = 0;  i < this.length; i++) {
-        console.log(this[i]);
-    }
-	`img/${name.toLowerCase()}/${this.name.toLowerCase()}`
+	
+Array.prototype.heroesRender = function(name) {
+	let arr = this;
+	let result = '';
+	for (let i = 0; i < arr.length; i++) {
+		result += ` <table>
+		 		<thead>
+					<tr>
+						<th>Name</th>
+						<th>Icon</th>
+					</tr>
+				</thead>
+				<tbody>
+		 			<tr>
+		 				<td>Thor</td>
+		 				<td>
+		 					<img src="images/marvel/thor.svg">
+						</td>
+					</tr><tr>
+						<td>Spider Man</td>
+						<td>
+		 					<img src="images/marvel/spiderman.svg">
+						</td>
+					</tr>
+		 		</tbody>
+		 	</table>`;
+	}
+	return result;
 }
 
-marvelHeroes.forEach();
-dcHeroes.forEach();
+document.write(marvelHeroes.heroesRender('marvel'));
+document.write(dcHeroes.heroesRender('dc'));
