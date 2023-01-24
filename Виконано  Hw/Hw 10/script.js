@@ -100,9 +100,9 @@ do {
 finalSum = countOfProduct * coefficient * priceOfProduct;
 
 if (category === "vegetables") {
-    productImg = `<img src="image/vegetables/${product}.svg" alt"${product}" width="100" height="100"></img>`; 
+    productImg = `<img src="images/vegetables/${product}.svg" alt"${product}" width="100" height="100"></img>`; 
 } else {
-    productImg = `<img src="image/fruits/${product}.svg" alt"${product}" width="100" height="100"></img>`;
+    productImg = `<img src="images/fruits/${product}.svg" alt"${product}" width="100" height="100"></img>`;
 } 
 
 document.write(`
