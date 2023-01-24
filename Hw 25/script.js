@@ -27,7 +27,6 @@
 // декілька екземплярів класу Автомобіль;
 // присвоїти власників автомобілям.
 
-// створити клас людина 
 class Human {
     constructor(name, age) {
         this.name = name;
@@ -57,3 +56,12 @@ class Car {
         this.owner.showInfo();
     }
 } 
+
+const human1 = new Human('Ivan', 25);
+const human = new Human('Petro', 37);   
+const car1 = new Car('BMW', 'X5', 2015, 'AA1234AA');    
+const car2 = new Car('Audi', 'A6', 2017, 'AA1235AA');
+car1.setOwner(human1);
+car2.setOwner(human);
+car1.showInfo();
+car2.showInfo();
