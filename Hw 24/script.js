@@ -30,6 +30,7 @@
 // В Array.prototype добавить свойство с названием heroesRender в значении которого находится функция.
 // Даная функция может вызываться в контексте любого массива и в качестве входящего аргумента принимает название папки ('dc', 'marvel'), 
 // с которой будут подтягиваться иконки супер-героев этого массива.
+
 // Пример:
 // dcHeroes.heroesRender('dc');
 // marvelHeroes.heroesRender('marvel');
@@ -42,7 +43,12 @@
 // 	</td>
 // </tr>
 // В первом td выводим свойство name объекта.
-// Во втором td выводим картинку, путь к которой включает название папки, которую передаем при вызове функции heroesRender(). В данном примере вывода папка называется marvel и вызов функции будет такой marvelHeroes.heroesRender('marvel'); Название самой картинки – это свойство name объекта, почищенное от пробелов и приведенное к нижнему регистру. Например, для {name: Spider Man} иконка будет иметь название spiderman.svg
+// Во втором td выводим картинку, путь к которой включает название папки, 
+// которую передаем при вызове функции heroesRender().
+//   В данном примере вывода папка называется marvel и вызов функции будет 
+//   такой marvelHeroes.heroesRender('marvel'); Название самой картинки – это 
+//   свойство name объекта, почищенное от пробелов и приведенное к нижнему регистру.
+//   Например, для {name: Spider Man} иконка будет иметь название spiderman.svg
 
 
 // Пример вывода таблицы:
@@ -91,10 +97,10 @@ let dcHeroes = [
 ];
 	
 Array.prototype.heroesRender = function(name) {
-	let arr = this;
 	let result = '';
-	for (let i = 0; i < arr.length; i++) {
-		result += ` <table>
+	for (let i = 0; i < this.length; i++) {
+		result += `<tr> 
+		<table>
 		 		<thead>
 					<tr>
 						<th>Name</th>
@@ -107,14 +113,15 @@ Array.prototype.heroesRender = function(name) {
 		 				<td>
 		 					<img src="images/marvel/thor.svg">
 						</td>
-					</tr><tr>
-						<td>Spider Man</td>
-						<td>
+					</tr>
+					<tr>
+						 <td>Spider Man</td>
+						  <td>
 		 					<img src="images/marvel/spiderman.svg">
 						</td>
 					</tr>
 		 		</tbody>
-		 	</table>`;
+		</table>`;
 	}
 	return result;
 }
