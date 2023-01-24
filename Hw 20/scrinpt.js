@@ -5,7 +5,6 @@
 // Знайти мінімальний елемент масиву та його порядковий номер.
 // Знайти максимальний елемент масиву та його порядковий номер.
 // Визначити кількість негативних елементів.
-
 // Знайти кількість непарних позитивних елементів.
 // Знайти кількість парних позитивних елементів.
 // Знайти суму парних позитивних елементів.
@@ -16,63 +15,34 @@
 let arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 
           46, 4, -51, 27,-63, 4, -54, 76, -4, 12, -35, 4, 47];
   
+let  Posit = arr.filter((item) => item >0 );
+let  PositSum = Posit.reduce((sum, current) => sum + current, 0);
+console.log(`Сума позитивних елем: ${PositSum}  Кількість: ${Posit.length}`);  
 
-let result = 0;
-const newArr = arr
-  .filter(function(val) {
-    return val > 0;         
-  }) 
-  .forEach(function(val) {
-    result += val;
-  })                // сума позитивних буде 438 !
-  
-  console.log(result);
-///////////////////////////////////////////////////////////////////
-
-console.log(`${Math.max(...arr)} порядковий номер ${arr.indexOf(76)} `);  // 76
-console.log(`${Math.min(...arr)} порядковий номер ${arr.indexOf(-63)} `);  // -63
-
-//////////////////////////////////////////////////////////////////////
+console.log(`${Math.max(...arr)} порядковий номер ${arr.indexOf(76)} `);  
+console.log(`${Math.min(...arr)} порядковий номер ${arr.indexOf(-63)} `);  
 
 let  Negative = arr.filter((item) => item <0 );
-console.log(`Кільк негат елем: ${Negative.length}`);   // кількість негативних елементів 10  
-////////////////////////////////////////////////////////////////////////
+console.log(`Кільк негат елем: ${Negative.length}`);   
 
-// знайти кількість непарних позитивних елементів.
 let  Positive = arr.filter((item) => item >0 );
 let  Odd = Positive.filter((item) => item % 2 !== 0 );
-console.log(`Кількість непарних позит елем: ${Odd.length}`); // кількість непарних позитивних елементів 4
+console.log(`Кількість непарних позит елем: ${Odd.length}`); 
 
-// знайти суму непарних позитивних елементів. 
 let  OddSum = Odd.reduce((sum, current) => sum + current, 0); 
-console.log(`Сума непарних позит елем: ${OddSum}`); // сума непарних позитивних елементів  146
-  ////////////////////////////////////////////////////////////////
+console.log(`Сума непарних позит елем: ${OddSum}`); 
 
-// знайти кількість парних позитивних елементів.
 let  Even = Positive.filter((item) => item % 2 === 0 );
-console.log(`Кількість  парних позит елем: ${Even.length}`); // кількість парних позитивних елементів 10
+console.log(`Кількість  парних позит елем: ${Even.length}`); 
 
-// знайти суму парних позитивних елементів.
 let  EvenSum = Even.reduce((sum, current) => sum + current, 0);
-console.log(`Сума парних позит елем: ${EvenSum}`); // сума парних позитивних елементів 292
+console.log(`Сума парних позит елем: ${EvenSum}`); 
 
-// /////////////////////////////////////////////////////////////////////////
-//    function sum(a, b){
-//     return a + b;
-//     }
-// let s=arr.reduce(sum);
-// console.log("All sum: "+s);  // 81
+let  Product = arr.filter((item) => item > 0 );
+let  PositiveSum = Product.reduce((sum, current) => sum * current, 1);
+console.log(`Добуток позитивних елем: ${PositiveSum}`); 
 
-///////////////////////////////////////////////////////////////////////
-
-
-//////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////
-
-// function isPositive(number) {
-//   return number > 0;
-// }
-
-// console.log( arr.every(isPositive) ); // false, не всі позит
-// console.log( arr.some(isPositive) ); // true, є хоть 1 позит елем
+let  Max = Math.max(...arr);
+let  MaxIndex = arr.indexOf(Max);
+let  NewArr = arr.map((item, index) => index === MaxIndex ? item : 0);
+console.log(`Найбільший елемент масиву: ${Max}`); 
