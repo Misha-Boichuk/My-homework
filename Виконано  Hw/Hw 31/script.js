@@ -77,42 +77,12 @@ const HAMBURGER = {
 }
 
 const hamburger = new HamBurger('small', 'cheese');
-const hamburger2 = new HamBurger('small', 'potato');
-const hamburger3 = new HamBurger('small', 'salad');
-const hamburger4 = new HamBurger('big', 'cheese');
-const hamburger5 = new HamBurger('big', 'potato');
-const hamburger6 = new HamBurger('big', 'salad');
+// const hamburger2 = new HamBurger('small', 'potato');
+// const hamburger3 = new HamBurger('small', 'salad');
 
 hamburger.addTopping('seasoning');
 hamburger.addTopping('mayonnaise');
-hamburger2.addTopping('seasoning');
-hamburger2.addTopping('mayonnaise');
-hamburger3.addTopping('seasoning');
-hamburger3.addTopping('mayonnaise');
-hamburger4.addTopping('seasoning');
-hamburger4.addTopping('mayonnaise');
-hamburger5.addTopping('seasoning');
-hamburger5.addTopping('mayonnaise');
-hamburger6.addTopping('seasoning');
-hamburger6.addTopping('mayonnaise');
 
-console.log(`Price small: ${hamburger.calculatePrice()},  calories: ${hamburger.calculateCalories()}`);
-console.log(`Price small: ${hamburger2.calculatePrice()},  calories: ${hamburger2.calculateCalories()}`);
-console.log(`Price small: ${hamburger3.calculatePrice()},  calories: ${hamburger3.calculateCalories()}`);
-console.log(`Price big: ${hamburger4.calculatePrice()},  calories: ${hamburger4.calculateCalories()}`);
-console.log(`Price big: ${hamburger5.calculatePrice()},  calories: ${hamburger5.calculateCalories()}`);
-console.log(`Price big: ${hamburger6.calculatePrice()},  calories: ${hamburger6.calculateCalories()}`);
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
+console.log(`Ціна малого гамбургера з сиром: ${hamburger.calculatePrice()},  калорій: ${hamburger.calculateCalories()}`);
+// console.log(`Ціна малого гамбургера  з картоплею: ${hamburger2.calculatePrice()},  калорій: ${hamburger2.calculateCalories()}`);
+// console.log(`Ціна малого гамбургера з салатом: ${hamburger3.calculatePrice()}, калорій: ${hamburger3.calculateCalories()}`);
