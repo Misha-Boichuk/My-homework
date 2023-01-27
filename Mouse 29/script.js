@@ -101,6 +101,94 @@ const users = [
 			}
 		]
 	}
-]
+];
 
-const main = document.querySelector("main");
+class Lector extends Person {
+	constructor(argumenrs) {
+		super(argumenrs);
+		
+	}
+
+	renderCourses() {
+		let allTitle = this.courses
+		.map((item) => {
+			return `<div class="course">
+				<div class="course__title">${item.title}</div>
+				<div class="course__score">${item.score}</div>
+				<div class="course__students-score">${item.studentsScore}</div>
+				</div>`
+				})
+				.join(``);
+				return allTitle;
+	}	
+}
+
+class Student extends Person {	
+
+	constructor(argumenrs) {
+		super(argumenrs);
+	}
+}
+
+class Person {
+	constructor({name, age, img, role, courses}) {
+		this.name = name;
+		this.age = age;
+		this.img = img;
+		this.role = role;
+		this.courses = courses;
+	}
+
+	renderCourses() {
+		let allTitle = this.courses
+		.map((item) => {
+			return `<div class="course">
+				<div class="course__title">${item.title}</div>
+				<div class="course__mark">${item.mark}</div>
+				</div>`
+				})
+				.join(``);
+				return allTitle;
+	}
+
+	render() {
+		return `<div class="person">
+		<div class="person__img">
+			<img src="${this.img}" alt="person">
+		</div>
+		<div class="person__name">${this.name}</div>
+		<div class="person__age">${this.age}</div>
+		<div class="person__role">
+			<img src="${roles[this.role]}" alt="role">
+		</div>
+		<div class="person__courses">
+			${this.renderCourses()}
+		</div>
+		</div>`
+	}
+}
+
+class User {
+	constructor() {
+		this.users = users;
+	}
+
+	render() {
+		let allUsers = this.users
+		.map((item) => {
+			if (item.role === "lector") {
+				return new Lector(item).render();
+			} else if (item.role === "student") {
+				return new Student(item).render();
+			} else {
+				return new Person(item).render();
+			}
+		})
+		.join(``);
+		return allUsers;
+	}
+}
+
+let user = new User();
+document.querySelector(`this.users`).innerHTML = user.render();
+
