@@ -7,37 +7,22 @@
     <title>My Practik </title>
     <style>
         body {
-            margin: 20px;
-            margin-top: 150px;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
         }
-        
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100px;
-            width: 100%;
-            background-color: rgb(230, 114, 205);
-            padding: 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center; 
+        .grid-wrapp {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
         }
-
-        #search {
-            width: 350px;
-            height: 50px;
-            border: none;
-            padding: 10px, 20px;
-            font-size: 18px;
-            border-radius: 10px;
+        .grid {
+            border: 1px solid blue;
         }
     </style>
 </head>
 <body>
-    <header>
-         <input type="text" id="search" placeholder="Find...">
-    </header>
     <script src="./practik.js"></script>
 </body>
 </html>
