@@ -128,144 +128,143 @@ const users = [
 ];
 
 class User {
-	constructor(name, age, img, role) {
+	 constructor (name, age, img, role, courses) {
 		this.name = name;
 		this.age = age;
 		this.img = img;
 		this.role = role;
+		this.courses = courses;
 	}
-
-	renderInfo() {
-		return ` 
-		  <div class="user">
-		    <div class="user_info">
-			 <div class="user_info--data">
-			   <img src="${this.img}" alt="${this.name} height="50">
-			   <div class="user_naming"> 
-			     <p>Name: <b>${this.name}<b></p>
-				 <p>Age: <b>${this.age}<b></p>
-			   </div>
-			 </div>
-			 <div class="user--role student">
-			    <img src="${roles[this.role]}" alt="${this.role} height="25".
-				<p>${this.role}</p>
-	        </div>
+	render() {
+		const user = document.createElement('div');
+		user.classList.add('user');
+		user.innerHTML = `
+		<div class="user__img">
+			<img src="${this.img}" alt="user">
 		</div>
-		  ${this.courses ? this.renderCourses() : ``}
-		</div> `
+		<div class="user__info">
+			<h3 class="user__name">${this.name}</h3>
+			<p class="user__age">${this.age}</p>
+			<img class="user__role" src="${roles[this.role]}" alt="role">
+		</div>
+		`;
+		return user;
 	}
-    renderCourses() {
-		let allTitle = this.courses
-		.map (el => {
-			return`<p class="user_courses--course ${this.role}">
-			${el.title} <span class="${grageUser(gradation, el.mark)}"> ${grageUser(gradation, el.mark)}</span></p>`;
-		})
-		.join(``);
-		return `<div class="user_courses">${allTitle}</div>`;
+	renderCourses() {
+		const courses = document.createElement('div');
+		courses.classList.add('courses');
+		courses.innerHTML = `
+		<h4 class="courses__title">Courses</h4>
+		<ul class="courses__list"></ul>
+		`;
+		return courses;
+	}
+	renderCourse(course) {
+		const courseItem = document.createElement('li');
+		courseItem.classList.add('course');
+		courseItem.innerHTML = `
+		<h5 class="course__title">${course.title}</h5>
+		`;
+		return courseItem;
+	}
+	renderCourseMark(course) {
+		const courseMark = document.createElement('div');
+		courseMark.classList.add('course__mark');
+		courseMark.innerHTML = `
+		<span class="course__mark-value">${course.mark}</span>
+		`;
+		return courseMark;
+	}
+	renderCourseScore(course) {
+		const courseScore = document.createElement('div');
+		courseScore.classList.add('course__score');
+		courseScore.innerHTML = `
+		<span class="course__score-value">${course.score}</span>
+		`;
+		return courseScore;
+	}
+	renderCourseLector(course) {
+		const courseLector = document.createElement('div');
+		courseLector.classList.add('course__lector');
+		courseLector.innerHTML = `
+		<img class="course__lector-img" src="${lectors[course.lector]}" alt="lector">
+		`;
+		return courseLector;
+	}
+	renderCourseStudentsScore(course) {
+		const courseStudentsScore = document.createElement('div');
+		courseStudentsScore.classList.add('course__students-score');
+		courseStudentsScore.innerHTML = `
+		<span class="course__students-score-value">${course.studentsScore}</span>
+		`;
+		return courseStudentsScore;
 	}
 }
 
-class  Student extends User {
-	constructor(arg) {
-		super(arg);
-	}
-}  
-
-class Admin extends User {
-	constructor(arg) {
-		super(arg);
+class Student extends User {
+	render() {
+		const student = super.render();
+		student.classList.add('user_student');
+		return student;
 	}
 	renderCourses() {
-		let allTitle = this.courses
-		.map(el => {
-			return `div class="user_courses--course ${this.role}">
-			<p>Title: <b>Front-end Pro</b></p>
-			<p>Lector's score: <span class="${grageUser(gradation, el.score)}">${grageUser(gradation, el.score)}</span></p>)
-			<p>Average student's score: <span class="${grageUser(gradation, el.score)}">${grageUser(gradation, el.score)}</span></p>
-			</div>`;
-		})
-		.join(``);
-		return `<div class="user_courses admin--info">${allTitle}</div>`;
+		const courses = super.renderCourses();
+		this.courses.forEach(course => {
+			const courseItem = super.renderCourse(course);
+			const courseMark = super.renderCourseMark(course);
+			courseItem.append(courseMark);
+			courses.querySelector('.courses__list').append(courseItem);
+		});
+		return courses;
+	}
+}	
+
+class Admin extends User {
+	render() {
+		const admin = super.render();
+		admin.classList.add('user_admin');
+		return admin;
+	}
+	renderCourses() {
+		const courses = super.renderCourses();
+		this.courses.forEach(course => {
+			const courseItem = super.renderCourse(course);
+			const courseScore = super.renderCourseScore(course);
+			const courseLector = super.renderCourseLector(course);
+			courseItem.append(courseScore, courseLector);
+			courses.querySelector('.courses__list').append(courseItem);
+		});
+		return courses;
 	}
 }
 
 class Lector extends User {
-		constructor(arg) {
-			super(arg);
-		}	
-        
-		renderCourses() {
-		 let allTitle = this.courses
-		    .map(el => {
-				return `div class="user_courses--course ${this.role}">
-				<p>Title: <b>Front-end Pro</b></p>
-				<p>Lector's score: <span class="${grageUser(gradation, el.score)}">${grageUser(gradation, el.score)}</span></p>)
-				<p>Average student's score: <span class="${grageUser(gradation, el.score)}">${grageUser(gradation, el.score)}</span></p>
-				</div>`;
-			})
-			.join(``);
-		return `<div class="user_courses admin--info">${allTitle}</div>`;
+	render() {
+		const lector = super.render();
+		lector.classList.add('user_lector');
+		return lector;
+	}
+	renderCourses() {
+		const courses = super.renderCourses();
+		this.courses.forEach(course => {
+			const courseItem = super.renderCourse(course);
+			const courseStudentsScore = super.renderCourseStudentsScore(course);
+			courseItem.append(courseStudentsScore);
+			courses.querySelector('.courses__list').append(courseItem);
+		});
+		return courses;
 	}
 }
 
-const Roles = {
-	"student": user => new Student(user),
-	"lector": user => new Lector(user),
-	"admin": user => new Admin(user)
-};
-
-function renderUsers(array) {
-	let users = array
-	  .map(user => Roles[user.role] ? Roles[user.role](user) : new User(user))
-	  .map(user => {
-		console.log(user);
-		return user;
-	  })
-	  .map(user => user.renderInfo())
-	  .join(``);
-
-	  usersBlock.innerHTML = users;
-}
-renderUsers(users);
-
-function grageUser(gradationObject, mark) { 
-	let grate = `test Grade`
-	for (let key in gradationObject) {
-		if(mark <= key) {
-			grate = gradationObject[key];
-			break;
-		}
-		return grate;
-	}
+gradation = {
+	student: Student,
+	admin: Admin,
+	lector: Lector
 }
 
-const markGradation = mark => {
-	let grad;
+mark = {
+	student: 'mark',
+	admin: 'score',
+	lector: 'studentsScore'
+}
 
-	for(let key in gradation){
-      if(mark <= key){
-		grad = gradation[key];
-		break;
-	  }
-	}
-	return grad;
-} 
-
-users 
- .filter(user => user.courses)
- .forEach(user => {
-	let userCourses = user.courses;
-
-	userCourses
-	   .map(course => {
-		if(course.mark)
-		    course.markGradation = markGradation(course.mark)
-		if(course.score)
-		    course.scoreGradation = mark.Gradation(course.score)
-        if(course.studentScore)			 	
-		    course.scoreStudentScore = mark.Gradation(course.studentScore) 	
-	   })
-	   console.log(userCourses);
- })
-
- 
