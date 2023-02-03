@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hw 36</title>
+    <title>Hw 36 Shapes ❤️🟢🔷</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 30px;
+        }
+        .circle {
+            width: 300px;
+            height: 300px;
+             border-radius: 50%;
+            border: 2px solid black;
+        }
+        .square {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+        }
+        .rectangle {
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+        }
+    </style>
 </head>
 <body>
+     <form>
+        <label>Select Shape:</label>
+        <select  name="shape">
+            <option value="circle">Circle</option>
+            <option value="square">Square</option>
+            <option value="rectangle">Rectangle</option>
+        </select>
+        <label>Select Color:</label>
+        <input type="color" id="color">
+     </form>
+
+     <div></div>
     <script src="./script.js"></script>
 </body>
 </html>

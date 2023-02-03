@@ -3,10 +3,6 @@
 // Вивести зображення з цієї папки, отримане випадковим чином (Math.random)
 
 
-// image = document.createElement('img');
-// image.src = `image/${Math.floor(Math.random() * 9 + 1)}.jpg`;   
-// document.body.appendChild(image);
-
-document.body.appendChild(document.createElement('img'))
-.src = `image/${Math.floor(Math.random() * 9 + 1)}.jpg`;
-
+image = document.createElement('img');
+image.src = `image/${Math.floor(Math.random() * 9 + 1)}.jpg`;   
+document.body.appendChild(image);

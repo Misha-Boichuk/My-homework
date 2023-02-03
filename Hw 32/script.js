@@ -10,6 +10,6 @@ input.addEventListener('focus', () => {
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
 
-    console.log(firstName); // Виводить в консоль значення з полів
-    console.log(lastName);  // Виводить в консоль значення з полів
-});                          //  не знаю чи правильно працює !!!
+    console.log(firstName); 
+    console.log(lastName);  
+});   
