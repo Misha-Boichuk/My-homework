@@ -1,3 +1,5 @@
+// 18 заняття 1:14:00  19 занятття 1:44
+
 let magicItems = [
   {
     "name": "Адамантова зброя (Adamantine armor)",
@@ -49,86 +51,124 @@ let magicItems = [
   },
 ];
 
+
+getDataFromLocalStorage("newMagicItems") && getDataFromLocalStorage("newMagicItems").forEach(item => {
+  magicItems.unshift(item);
+})                                      
+
+  // if(getDataFromLocalStorage("deleteId")) {
+  //    magicItems = magicItems.filter(item => !getDataFromLocalStorage("deleteId").includes(item.id)); ///  Не працює 
+  // }
+
 const innerDiv = document.querySelector(".item-container");
 const search = document.getElementById("search");
-const create = document.getElementById("create");
+const create = document.getElementById("create"); 
 const close = document.getElementById("close");
+
 
 function renderMargicItems(magicItems) {
   innerDiv.innerHTML = "";
+  
+  magicItems.forEach(item => {
+    const div = document.createElement("div");
+    const divLeft = document.createElement("div");
+    const divRight = document.createElement("div");
+    const title = document.createElement("h3");
+    const description = document.createElement("div");
+    const type  = document.createElement("p");
+    const quality = document.createElement("p");
+    const deleteImage= document.createElement("img");
 
+    deleteImage.addEventListener("click", () => {
+       const dataId = getDataFromLocalStorage("deleteId") ?
+       [...getDataFromLocalStorage("deleteId"), item.id]
+       : [item.id];
 
-magicItems.forEach(item => {
-  const div = document.createElement("div");
-  const divLeft = document.createElement("div");
-  const divRight = document.createElement("div");
-  const title = document.createElement("h3");
-  const description = document.createElement("div");
-  const type  = document.createElement("p");
-  const quality = document.createElement("p");
+       setDataToLocalStorage("deleteId", dataId);
+       document.getElementById(item.id).remove(); 
+     })
 
-  div.classList.add("card");
-  divRight.classList.add("card-right");
+    div.classList.add("card");
+    divRight.classList.add("card-right");
+    deleteImage.classList.add("delete"); 
 
-  title.innerText = item.name;
-  description.innerHTML = item.description;
-  type.innerHTML = `<b>Type:</b> <br /> ${item.type}`;
-  quality.innerHTML = `<b>Quality:</b> <br /> ${item.quality}`;
+    div.id =item.id;
+  
+    title.innerText = item.name;
+    description.innerHTML = item.description;
+    type.innerHTML = `<b>Type:</b> <br /> ${item.type}`;
+    quality.innerHTML = `<b>Quality:</b> <br /> ${item.quality}`;
+    deleteImage.src="image/delete.png";  
 
-  divRight.append(type);
-  divRight.append(quality);
+    divRight.append(type);
+    divRight.append(quality);
 
-  divLeft.append(title); 
-  divLeft.append(description); 
+    divLeft.append(title); 
+    divLeft.append(description); 
 
-  div.append(divLeft);
-  div.append(divRight);
- 
-  innerDiv.append(div);
-})
+    div.append(divLeft);
+    div.append(divRight);
+    div.append(deleteImage)
+  
+    innerDiv.append(div);
+  })
 }
 search.addEventListener("input", () => {
   const searchValue = search.value;
 
   const filterMagicItems = magicItems
   .filter(item => item.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1);
-      
 
-   renderMargicItems(filterMagicItems);
-});
+  renderMargicItems(filterMagicItems);
+})
 
 renderMargicItems(magicItems);
 
-function toggElement(el) {
+function toggleElement() {
   const modal = document.querySelector(".modal-container");
-  modal.classList.remove("d-none");
+  modal.classList.toggle("d-none");
 }
-
+     
 create.addEventListener("click", () => {
-  toggElement();
+  toggleElement();
   const add = document.getElementById("add");
+});
 
-  add.addEventListener("click", () => {
-      createNewMagicItem();                 // ця функція не працює 
-      toggElement();
-    });
-})
+add.addEventListener("click", () => {
+    createNewMagicItem();  // не працює createNewMagicItem
+    toggleElement();
+});
 
-close.addEventListener("clock", () => {
-  toggElement();
+close.addEventListener("click", () => {
+  toggleElement();
 });
 
 function createNewMagicItem() {
-  const name = document.getElementById("name").value;
-  const type = document.getElementById("type").value;
+  const name = document.getElementById("name").value; // не працює  .value  підкреслює
+  const type = document.getElementById("type").value; 
   const quality = document.getElementById("quality").value;
-  const description = document.getElementById("description").value;
+  const description = document.getElementById("description").value; 
+  const id = Math.floor(Math.random() * 1000000000000)
 
-  const newItem = { name, type, value, quality, description };
+  const newItem = { name, type, quality, description };
+
+  const dataToSet = getDataFromLocalStorage("newMagicItems") ?
+   [... (getDataFromLocalStorage("newMagicItems")) , newItem] 
+   : [newItem];
 
   magicItems.unshift(newItem);
   renderMargicItems(magicItems);
+
+  setDataToLocalStorage("newMagicItems", dataToSet);
 }
 
+function setDataToLocalStorage(key, data) {
+  const toStrData = JSON.stringify(data);
 
-//////////////// не працює кнопка close  і підкреслює value
+  localStorage.setItem(key, toStrData);
+}
+
+function getDataFromLocalStorage(key){
+  return JSON.parse(localStorage.getItem(key));
+}
+
