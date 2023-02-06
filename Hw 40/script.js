@@ -22,3 +22,20 @@
 //     </li>
 //     <li>3</li>
 // </ul>
+let array = [1, 2, [1.1, 1.2, 1.3], 3];
+
+function generateList(array) {
+    let ul = document.createElement('ul');
+    for (let i = 0; i < array.length; i++) {
+        let li = document.createElement('li');
+        if (Array.isArray(array[i])) {
+            li.appendChild(generateList(array[i]));
+        } else {
+            li.innerText = array[i];
+        }
+        ul.appendChild(li);
+    }
+    return ul;
+}   
+document.body.appendChild(generateList(array));
+

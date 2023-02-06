@@ -7,30 +7,42 @@
     <title>Hw 37 Голосування</title>
 
     <style>
-        .smile {
-            display: inline-block;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
         .counter {
-            display: inline-block;
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin: 0 auto;
+        }
+        .smile {
             width: 100px;
             height: 100px;
-            border-radius: 50%;
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
+            border-radius: 100%;
+
+            background-color: #fff;
+            border: 1px solid #000;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
+        .smile:hover {
+            background-color: #000;
+        }
+        .smile:active {
+            background-color: #fff;
+        }
+    
     </style>
 </head>
 <body>
-     
+    <form>
+        <div class="counter" id="counter">
+            <div class="smile" id="smile"></div>
+            <div class="smile" id="smile"></div>
+            <div class="smile" id="smile"></div>
+            <div class="smile" id="smile"></div>
+            <div class="smile" id="smile"></div>
+        </div>
+ 
+   
+    </form>
 
     <script src="./script.js"></script>
 </body>

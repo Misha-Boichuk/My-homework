@@ -11,19 +11,93 @@
 //     Кнопка “Зберегти”
 // За натисканням на кнопку замість форми повинна виводитися “таблиця” з даними, які ввів користувач.
 
-form = document.forms[0];
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    let data = new FormData(form);
-    let table = document.createElement('table');
-    let tr = document.createElement('tr');
-    let td = document.createElement('td');
-    for (let [key, value] of data.entries()) {
-        let td = document.createElement('td');
-        td.innerText = value;
-        tr.appendChild(td);
-    }
-    table.appendChild(tr);
-    document.body.appendChild(table);
+
+
+
+
+
+
+
+
+
+
+
+
+const form = document.querySelector('form');
+const container = document.querySelector('.container');
+const button = document.querySelector('button');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 });
 
+const fiForTable = {
+    name: "Name",
+    surname: "Surname",
+    date: "Date",
+    gender: "Gender",
+    city: "City",
+    adress: "Adress",
+    lang: "Lang",
+    
+};
+
+function renderAfterClick(obj) {
+     const Trs = [];
+        
+    for (let key in fiForTable) {
+        Trs.push(`<tr>
+            <td>${fiForTable[key]}</td>
+            <td>${obj[key]}</td>
+        </tr>`);
+    }
+
+    container.innerHTML = `<table>${Trs.join('')}</table>`; 
+};
+
+//button.addEventListener('click', renderAfterClick);  
+
+button.addEventListener('click', () => {
+    const name = document.getElementById('name');
+    console.log(name.value);
+
+    const surname = document.getElementById('surname');
+    console.log(surname.value);
+
+    const date = document.getElementById('date');
+    console.log(date.value);
+
+    const gender = document.querySelectorAll('.gender');
+    for(let i = 0; i < gender.length; i++) {
+        if(gender[i].checked) { 
+            console.log(gender[i].value);
+        }
+    }
+
+    const city = document.getElementById('city');
+    console.log(city.value);
+
+
+    const adress = document.getElementById('adress');
+    console.log(adress.value);
+
+    const lang = document.querySelectorAll('.lang');
+    for(let i = 0; i < lang.length; i++) {
+        if(lang[i].checked) { 
+            console.log(lang[i].value);
+        }
+    }
+
+    const obj = {
+        name: name.value,
+        surname: surname.value,
+        date: date.value,
+        gender: gender.value,
+        city: city.value,
+        adress: adress.value,
+        lang: lang.value,
+    }; 
+
+    renderAfterClick(obj);
+
+});
