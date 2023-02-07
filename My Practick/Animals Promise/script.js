@@ -36,6 +36,8 @@ const controller = (method, action) => {
 // .then(data => console.log("GET", `json/${data[2]}.json`))
 // .catch(err => console.log(err));
     
+//    Promise.all 
+
 
 // Promise.all([
 //     controller("GET", "json/dog.json"),
@@ -47,14 +49,36 @@ const controller = (method, action) => {
 
 //////////////////////////////////////////
 
+// controller("GET", "json/animals.json")
+//     .then(data => {
+//          Promise.all(data.animals.map(animals => controller("GET", `json/${animals}.json`)))
+//             .then(data => data.forEach(animal => {
+//                 const p = document.createElement("p");
+//                 p.innerText = animal.name;
+//                 document.body.append(p);  // виводить імена на сторінку не змінюючи іх порядок!
+//             }))
+        
+//     })
+//     .catch(err => console.log(err));
+///////////////////////////////////////////////////////
+
+// Promise ALLSETTLED
+
 controller("GET", "json/animals.json")
     .then(data => {
-         Promise.all(data.animals.map(animals => controller("GET", `json/${animals}.json`)))
-            .then(data => data.forEach(animal => {
-                const p = document.createElement("p");
-                p.innerText = animal.name;
-                document.body.append(p);  // виводить імена на сторінку не змінюючи іх порядок!
-            }))
-        
+        Promise.allSettled(data.animals.map(animals => controller("GET", `json/${animals}.json`)))
+            .then(data => {
+                data.forEach(item => {
+                    if(item.status === "fulfilled") {
+
+                    }else{
+                        Promise.reject(item.reason);
+                    }
+                    console.log(item);
+                })
+            })
+            .catch(err => console.log(err));
     })
     .catch(err => console.log(err));
+            
+///  не доробюлен з уроку 22 час 1:15:00
