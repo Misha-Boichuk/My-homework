@@ -5,45 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hw 37 Голосування</title>
-
     <style>
-        .counter {
+        body {
+            background-color: #b3a1e4;
+        }
+        .smile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .smile {
             display: flex;
             justify-content: space-between;
-            width: 400px;
-            margin: 0 auto;
+            width: 300px;
         }
-        .smile {
-            width: 100px;
-            height: 100px;
-            border-radius: 100%;
+       
+     
 
-            background-color: #fff;
-            border: 1px solid #000;
-            cursor: pointer;
-        }
-        .smile:hover {
-            background-color: #000;
-        }
-        .smile:active {
-            background-color: #fff;
-        }
-    
+
     </style>
 </head>
-<body>
-    <form>
-        <div class="counter" id="counter">
-            <div class="smile" id="smile"></div>
-            <div class="smile" id="smile"></div>
-            <div class="smile" id="smile"></div>
-            <div class="smile" id="smile"></div>
-            <div class="smile" id="smile"></div>
-        </div>
- 
-   
+<body>  
+    <form action="">
+        <label for="">
+            <input type="radio" name="smile" value="smile1">
+            <img src="./img/smile1.png" alt="smile1">
+        </label>
     </form>
 
+        
     <script src="./script.js"></script>
 </body>
 </html>

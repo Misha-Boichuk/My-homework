@@ -11,93 +11,57 @@
 //     Кнопка “Зберегти”
 // За натисканням на кнопку замість форми повинна виводитися “таблиця” з даними, які ввів користувач.
 
+// // робота Олексія 
+// const saveButton = document.querySelector('#button');
+//        table = document.querySelector('.table');
+//        container = document.querySelector('#cont');
 
+// saveButton.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     getDataFomForm();
+// });
 
+// function getDataFomForm() {
+//     const firstName = document.querySelector('#firt-name').value,
+//     secondName = document.querySelector('#second-name').value,
+//     birthDate = document.querySelector('#date').value,
+//     gender = document.querySelector('input[name="gender"]:checked').value,
+//     city = document.querySelector('#city').value,
+//     adress = document.querySelector('#adress').value,
+//     lang = document.querySelector('#item-form'), 
+//     Language = lang.querySelectorAll('input[name="language"]:checked');
 
+//     const newObject = {
+//         'First name': firstName,
+//         'Second name': secondName,
+//         'Birth date': birthDate,
+//         Gender: gender,
+//         City: city,
+//         Adress: adress,
+//         Language: [],
+//     };
 
+//     Language.forEach(element => {
+//         newObject.Language.push(element.value);
+//     });          ///            ////
 
+//     renderForm(newObject);
+//     table.classList.remove('d-none');
+//     container.classList.add('d-none');
+// }
 
+// function renderForm(obj) {
+//     for (let key in obj) {
+//         const tr = document.createElement('tr');
+//         const td1 = document.createElement('td');
+//         const td2 = document.createElement('td');
 
+//         td1.innerText = key;
+//         td2.innerText = obj[key];
 
+//         tr.append(td1);
+//         tr.append(td2);
 
-
-
-
-const form = document.querySelector('form');
-const container = document.querySelector('.container');
-const button = document.querySelector('button');
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-});
-
-const fiForTable = {
-    name: "Name",
-    surname: "Surname",
-    date: "Date",
-    gender: "Gender",
-    city: "City",
-    adress: "Adress",
-    lang: "Lang",
-    
-};
-
-function renderAfterClick(obj) {
-     const Trs = [];
-        
-    for (let key in fiForTable) {
-        Trs.push(`<tr>
-            <td>${fiForTable[key]}</td>
-            <td>${obj[key]}</td>
-        </tr>`);
-    }
-
-    container.innerHTML = `<table>${Trs.join('')}</table>`; 
-};
-
-//button.addEventListener('click', renderAfterClick);  
-
-button.addEventListener('click', () => {
-    const name = document.getElementById('name');
-    console.log(name.value);
-
-    const surname = document.getElementById('surname');
-    console.log(surname.value);
-
-    const date = document.getElementById('date');
-    console.log(date.value);
-
-    const gender = document.querySelectorAll('.gender');
-    for(let i = 0; i < gender.length; i++) {
-        if(gender[i].checked) { 
-            console.log(gender[i].value);
-        }
-    }
-
-    const city = document.getElementById('city');
-    console.log(city.value);
-
-
-    const adress = document.getElementById('adress');
-    console.log(adress.value);
-
-    const lang = document.querySelectorAll('.lang');
-    for(let i = 0; i < lang.length; i++) {
-        if(lang[i].checked) { 
-            console.log(lang[i].value);
-        }
-    }
-
-    const obj = {
-        name: name.value,
-        surname: surname.value,
-        date: date.value,
-        gender: gender.value,
-        city: city.value,
-        adress: adress.value,
-        lang: lang.value,
-    }; 
-
-    renderAfterClick(obj);
-
-});
+//         table.append(tr);
+//     }
+// }
