@@ -10,9 +10,9 @@
 
 const smile = document.querySelectorAll('.smile');
 
-smile.forEach(el => {
-    let counter = 1;
-    el.addEventListener('click', (e) => {
-        e.target.nextElementSibling.innerText = counter++;
-    });
+    smile.forEach(el => {
+        let counter = 1;
+        el.addEventListener('click', (e) => {
+            e.target.nextElementSibling.innerText = counter++;
+        });
 });
