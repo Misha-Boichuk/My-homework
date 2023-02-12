@@ -283,7 +283,6 @@ const arrRoles = newRole.map((user) => {
 
 document.write(`
 	<div class="users">
-
 		${arrRoles.join("")}
 	</div>
 `);
