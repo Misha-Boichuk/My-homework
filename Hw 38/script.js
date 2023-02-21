@@ -15,19 +15,19 @@ const store = {
                 {
                     name: 'Product',
                     descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                    photo: 'images/iphone/10 ',
+                    photo: 'images/iphone/12.jpg',
                     price: 1000,
                 },
                 {
                     name: 'Product',
                     descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                    photo: '',
+                    photo: 'images/iphone/11.jpg',
                     price: 700,
                 },
                 {
                     name: 'Product',
                     descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                    photo: '',
+                    photo: 'images/iphone/10.jpg',
                     price: 800,
                 },
             ]
@@ -37,19 +37,19 @@ const store = {
                     {  
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: '',
+                        photo: 'images/laptop/black.jpg',
                         price: 2000,
                     },
                     {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: '', 
+                        photo: 'images/laptop/gray.jpg',
                         price: 1500,
                     },
                     {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: '',  
+                        photo: 'images/laptop/red.jpg',
                         price: 800,
                     }   
                 ]
@@ -59,19 +59,19 @@ const store = {
                    {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: '',
+                        photo: 'images/tablet/tab1.jpg',
                         price: 1000,
                    },
                      {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: '',
+                        photo: 'images/tablet/tab2.jpg',
                         price: 1500,
                      },
                      {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: '',
+                        photo: 'images/tablet/tab3.jpg',  
                         price: 800,
                      }
                ]
@@ -94,7 +94,7 @@ const navList = document.createElement('ul');
 nav.append(navList);
 
 for (let key in store.categories) {
-    const navItem = document.createElement('li');
+    const navItem = document.createElement('ul');
     navItem.textContent = key;
     navList.append(navItem);
 }
@@ -107,7 +107,7 @@ navList.addEventListener('click', (event) => {
     const category = event.target.textContent;
     const products = store.categories[category].products;
     for (let product of products) {
-        const mainItem = document.createElement('li');
+        const mainItem = document.createElement('ul');
         mainItem.textContent = product.name;
         mainList.append(mainItem);
     }
@@ -126,7 +126,7 @@ mainList.addEventListener('click', (event) => {
                 <p>${item.descraption}</p>
                 <img src="${item.photo}" alt="${item.name}">
                 <p>${item.price}</p>
-                <button>Buy</button>
+                <button>Купити</button>
                 `
                 aside.append(asideItem);
             }
@@ -138,4 +138,4 @@ aside.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON') {
         alert('Product bought');
     }
-})
+}); 
