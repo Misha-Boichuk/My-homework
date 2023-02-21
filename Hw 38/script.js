@@ -15,19 +15,19 @@ const store = {
                 {
                     name: 'Product',
                     descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                    photo: 'https://www.apple.com/v/iphone/home/ah/images/overview/compare/compare_iphone_12__d2x2q2z2x2y2.jpg',
+                    photo: 'images/iphone/10 ',
                     price: 1000,
                 },
                 {
                     name: 'Product',
                     descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                    photo: 'https://www.apple.com/v/iphone/home/ah/images/overview/compare/compare_iphone_10__d2x2q2z2x2y2.jpg',
+                    photo: '',
                     price: 700,
                 },
                 {
                     name: 'Product',
                     descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                    photo: 'https://www.apple.com/v/iphone/home/ah/images/overview/compare/compare_iphone_11__d2x2q2z2x2y2.jpg',
+                    photo: '',
                     price: 800,
                 },
             ]
@@ -37,19 +37,19 @@ const store = {
                     {  
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: 'https://www.apple.com/v/mac/home/ah/images/overview/macbook_pro__d2x2q2z2x2y2.jpg',
+                        photo: '',
                         price: 2000,
                     },
                     {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: 'https://www.apple.com/v/mac/home/ah/images/overview/macbook_air__d2x2q2z2x2y2.jpg',
+                        photo: '', 
                         price: 1500,
                     },
                     {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: 'https://www.apple.com/v/mac/home/ah/images/overview/macbook_m1__d2x2q2z2x2y2.jpg',  
+                        photo: '',  
                         price: 800,
                     }   
                 ]
@@ -59,19 +59,19 @@ const store = {
                    {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: 'https://www.apple.com/v/ipad/home/ah/images/overview/compare_ipad_air__d2x2q2z2x2y2.jpg',
+                        photo: '',
                         price: 1000,
                    },
                      {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: 'https://www.apple.com/v/ipad/home/ah/images/overview/compare_ipad_pro__d2x2q2z2x2y2.jpg',
+                        photo: '',
                         price: 1500,
                      },
                      {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        photo: 'https://www.apple.com/v/ipad/home/ah/images/overview/compare_ipad_mini__d2x2q2z2x2y2.jpg',
+                        photo: '',
                         price: 800,
                      }
                ]
@@ -134,9 +134,8 @@ mainList.addEventListener('click', (event) => {
     }
 })
 
-// aside.addEventListener('click', (event) => {
-//     if (event.target.tagName === 'BUTTON') {
-//         alert('Product bought');
-//     }
-// })
-
+aside.addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        alert('Product bought');
+    }
+})
