@@ -4,19 +4,28 @@ body {
     font-family: "Times New Roman", Times, serif;
     font-size: 2em;
     margin: 0;
-    padding: 0;
+    padding: 10px 10px 10px 10px;
+}
+.buyButton {
+    background-color: #962655;
+    border-radius: 5px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1em;
+    padding: 10px ;
+    cursor: pointer;
 }
 
-.container {
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 0 20px;
-}
-
-.left {
+.leftBlock {
+    float: left;
     width: 50%;
 }
 
-.right {
+.centerBlock {
+    float: left;
     width: 50%;
 }
+.rightBlock {
+    float: right;
+    width: 50%;
+}
+
