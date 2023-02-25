@@ -22,7 +22,8 @@
 //     </li>
 //     <li>3</li>
 // </ul>
-let array = [1, 2, [1.1, 1.2, 1.3], 3];
+
+let array = [1, 2, 3, [1, 2, 3, [1.1, 1.2, 1.3]], 4];
 
 function generateList(array) {
     let ul = document.createElement('ul');
@@ -38,4 +39,3 @@ function generateList(array) {
     return ul;
 }   
 document.body.appendChild(generateList(array));
-
