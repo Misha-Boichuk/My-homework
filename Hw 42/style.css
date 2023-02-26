@@ -5,7 +5,7 @@ body {
     color: rgb(36, 36, 134);
     margin-left: 30px;
 }
-
+/* 
 .gender {
     color: rgb(36, 36, 134);
     font-size: 18px;
@@ -16,4 +16,33 @@ body {
     color: rgb(36, 36, 134);
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
+} */
+
+.form {
+    background-color: rgb(195, 70, 70);
+    border: 1px solid rgb(34, 34, 162);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
 }
+
+.btm {
+    background-color: rgb(149, 55, 8);
+    
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.tbody {
+    background-color: rgb(55, 129, 193);
+}
+
+.input {
+    color: blueviolet;
+}
+

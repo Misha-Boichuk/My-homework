@@ -1,4 +1,4 @@
-// ДЗ 12. Print right arrays
+    // ДЗ 12. Print right arrays
 // Dано:
 // sports = [
 // 	['skier','⛷'],

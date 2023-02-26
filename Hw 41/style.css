@@ -76,3 +76,45 @@ nav {
     float: center;
     border-radius: 1px;
 }
+
+.form-data {
+    background: #9ed760;
+    float: center;
+    border-radius: 1px;
+}
+
+.form{
+    background: #9ed760;
+    float: center;
+    border-radius: 1px;
+}
+
+.form-name {
+    background: #9ed760;
+    float: center;
+    border-radius: 1px;
+}
+
+.form-email {
+    background: #9ed760;
+    float: center;
+    border-radius: 1px;
+}
+
+.form-phone {
+    background: #9ed760;
+    float: center;
+    border-radius: 1px;
+}
+
+.form-message {
+    background: #9ed760;
+    float: center;
+    border-radius: 1px;
+}
+
+.form-submit {
+    background: #9ed760;
+    float: center;
+    border-radius: 1px;
+}
