@@ -1,48 +1,36 @@
 body {
-    background-color: rgb(228, 195, 195);
+    background-color: rgb(194, 224, 135);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
-    color: rgb(36, 36, 134);
-    margin-left: 30px;
-}
-/* 
-.gender {
-    color: rgb(36, 36, 134);
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(86, 50, 182);
+    margin: 30px;
+   
 }
 
-.lang{
-    color: rgb(36, 36, 134);
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-} */
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 35px;
+}
 
-.form {
-    background-color: rgb(195, 70, 70);
-    border: 1px solid rgb(34, 34, 162);
+button {
+    background-color: rgb(86, 50, 182);
+    color: rgb(153, 204, 52);
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid rgb(86, 50, 182);
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    width: 400px;
+    padding: 5px;
+    margin: 10px 30px ;
 }
 
-.btm {
-    background-color: rgb(149, 55, 8);
-    
-}
-
-.table {
+table{
     display: flex;
     justify-content: center;
-    text-align: center;
-}
+    align-items: center;
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(107, 65, 222);
 
-.tbody {
-    background-color: rgb(55, 129, 193);
 }
-
-.input {
-    color: blueviolet;
-}
-

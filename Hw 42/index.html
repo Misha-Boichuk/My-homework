@@ -8,21 +8,72 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-       <form >
-        <label for="id">Name</label>
-        <input type="text" name="name" id="id">
-        <label for="id">Surname</label>
-        <input type="text" name="surname" id="id">
-    
+    <h2>Registration user </h2>
+     <form>
+        <figure>
+            <label><b>First Name:</b></label>
+            <input type="text" name="first-name" id="first-name">
+            <br>
+            <label><b>Last Name</b></label>
+            <input type="text" name="last-name" id="last-name">
+            <br>
+            <label><b>Birtdate:</b></label>
+            <input type="text" name="birthday" id="birthday">
+        </figure>
 
-        <select name="selct" id="id">
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-        </select>
-       </form>
-    
+        <figure>
+           <leg><b>Gender:</b> </leg>
+           <br>
+            <label>male
+                <input type="radio" name="gender" id="gender-male" value="male">
+            </label>
+            <label>women
+                <input type="radio" name="gender" id="gender-female" value="female">
+            </label>
+        </figure>
+
+        <figure>
+            <figcaption><b>City:</b></figcaption>
+            <select name="city" id="city">
+                <option value="Kyiv">Kyiv</option>
+                <option value="Lviv">Lviv</option>
+                <option value="Odessa">Odessa</option>
+                <option value="Kharkiv">Kharkiv</option>
+                <option value="Lubne">Lubne</option>
+            </select>
+        </figure>  
+
+        <figure>
+            <leg><b>Address:</b></lege>
+            <br>
+            <textarea name="address" id="address" cols="25" rows="2"></textarea>
+        </figure>
+
+        <figure>
+            <label><b>Languages</b></label>
+            <br>
+            
+            <input type="checkbox" id="english" name="languages" value="english">
+            <label for="english">English</label>
+            <br>
+            
+            <input type="checkbox" id="spanish" name="languages" value="spanish">
+            <label for="spanish">Spanish</label>
+            <br>
+           
+            <input type="checkbox" id="french" name="languages" value="french">
+            <label for="french">French</label>
+            <br>
+            
+            <input type="checkbox" id="german" name="languages" value="german">
+            <label for="german">German</label>
+            <br>    
+        </figure>
+
+        <button type="submit" id="button">Зберегти</button>
+     </form>
+      
+
     <script src="./script.js"></script>
 </body>
 </html>

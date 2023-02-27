@@ -9,6 +9,7 @@
 //    Склад Нової пошти для надсилання
 //    Післяплати або оплати банківської картки
 //    Кількість продукції, що купується
+
 //    Коментар до замовлення
 // 2. Реалізувати перевірку всіх даних користувача під час підтвердження замовлення - обов'язкові поля заповнені.
 //    Інакше - виводити помилку на сторінку
@@ -153,11 +154,15 @@ function productInfo(product){
     divPage.append(productDescraption);
     divPage.append(productBuy);
 }
-
+ 
 function buyProduct(product){
     divPage.innerHTML = '';
-    alert (`Ви купили ${product.name}`);
+    const productBuy = document.createElement('div');
+        productBuy.classList.add('product-buy');
+        productBuy.textContent = `Ви купили ${product.name}`;
+    divPage.append(productBuy);
 }
+
 for (const category in store.categories) {
     addNavigation(category);
 }
@@ -165,3 +170,18 @@ for (const category in store.categories) {
 body.append(nav);
 body.append(mainDiv);
 body.append(divPage);
+
+
+
+
+// function buyProduct(product){
+//     divPage.innerHTML = '';
+//     alert (`Ви купили ${product.name}`);
+// }
+// for (const category in store.categories) {
+//     addNavigation(category);
+// }
+
+// body.append(nav);
+// body.append(mainDiv);
+// body.append(divPage);
