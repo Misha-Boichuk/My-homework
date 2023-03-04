@@ -14,7 +14,8 @@ body{
 }
 
 nav {
-    background-color: rgb(152, 177, 177);
+    background-color: rgb(88, 81, 194);
+    font-size: 25px;
     width: 20%;
     left: 0;
     padding: 10px;
@@ -24,7 +25,7 @@ nav {
 
 .alttext-container {
     display: flex;
-    background-color: rgb(42, 26, 149);
+    /* background-color: rgb(42, 26, 149); */
     width: 20%;
     left: 0;
     padding: 10px;
@@ -32,21 +33,19 @@ nav {
 }
 
 .categories {
-    /* background: rgb(255, 0, 174);  */
+    /* background: rgb(228, 178, 212);   */
     display: flex;
     width: 50%;
-    font-size: 40px;
-    /* position: relative; */
-    /* left: 0px;
-    top: 0; */
+    font-size: 25px;
     cursor: pointer; 
 }
 
 
 .product {
-     /* background: rgb(97, 241, 241); */
+    background: rgb(97, 241, 241);  
     float: right;
     width: 20%;
+    font-size: 15px;
 }
 
 .products-item {
@@ -59,62 +58,71 @@ nav {
 }
 
 .product-buy {
-    background: #c74545;
+    background: #c74545; 
     float: right;
     border-radius: 8px;
 }
  
 .product-price {
     background: #b8d247;
-
-    
-    
+    float: right;
 } 
 
 .product-img {
-    background: #9ed760;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    background: #85c925;
+   
+}
+
+/* order forma */
+
+form{
+    background: #aacf82;
     float: center;
     border-radius: 1px;
 }
 
-.form-data {
-    background: #9ed760;
+form button {
+    height: 20px;
+    font-size: 15px;
+    background: #d760b3;
+    border: none;
+    cursor: pointer;
+    transition: 0.3c all ease-in-out;
+}
+
+.ninza {
+    /* background: #d760b3; */
     float: center;
     border-radius: 1px;
 }
 
-.form{
-    background: #9ed760;
-    float: center;
-    border-radius: 1px;
+form button:hover {
+      font-size: 15px;
 }
 
-.form-name {
-    background: #9ed760;
-    float: center;
-    border-radius: 1px;
+.d-none {
+    display: none;
+} 
+
+
+
+
+table{
+    margin-left: 100px;
+    width: 50%;
+    height: 40%;
+    border-radius: 10px;
 }
 
-.form-email {
-    background: #9ed760;
-    float: center;
-    border-radius: 1px;
-}
-
-.form-phone {
-    background: #9ed760;
-    float: center;
-    border-radius: 1px;
-}
-
-.form-message {
-    background: #9ed760;
-    float: center;
-    border-radius: 1px;
-}
-
-.form-submit {
-    background: #9ed760;
-    float: center;
-    border-radius: 1px;
+table,
+ th, 
+ td , 
+ tr {
+    
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
 }

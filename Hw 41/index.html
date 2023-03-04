@@ -6,39 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hw 41 Модифік інтернет-магазин</title>
     <link rel="stylesheet" href="./style.css">
+
 </head>
+
 <body>
-    <form>
-        <label>FirstName:
-            <input type="text">
-        </label>
-        <br>
-        <label>SecondName:
-            <input type="text">
-        </label>
-        <br>
-        <label><br>Місто:</b>
-            <select id="city">
-                <option id="lviv" value="Львів">Львів</option>
-                <option id="odesa" value="Одеса">Одеса</option>
-                <option id="poltava" value="Полтава">Полтава</option>
-                <option id="vinnitsa" value="Вінниця">Вінниця</option>
-                <option id="ivano-frankivsk" value="Івано-Франківськ">Івано-Франківськ</option>
-            </select>
-        </label> 
-        <br>
-        <label><br>Post Office:
-            <input type="tel">
-        </label>
-        <br>
-        <label><br>Payment: <br>
-            <input type="tel">
-        </label>
-        <br>
-        <label><br>Now many product:
-            <textarea type="text" cols="20" rows="2"></textarea>
-        </label>
-    </form>
-    <script src="./script.js"></script>
+     <nav></nav>
+
+        <div class="categories">
+            <div class="ninza">
+                <h2>Categories</h2>
+            </div>
+        </div>
+    
+        <div class="product">
+            <div class="ninza">
+                <h2>Product</h2>
+            </div>
+        </div>
+
+        <form class="d-none" >
+            <h3>Create Order</h3>
+            
+                <div class="contact-info" >
+                    <label>First Name:</label>
+                    <input type="text" name="first-name" id="first-name" required>
+                        <br>
+                    <label>Last Name:</label>
+                    <input type="text" name="last-name" id="last-name" required>
+                </div>
+                            <div class="city">City:
+                                    <select name="city" id="city"required>
+                                        <option value="Kyiv">Kyiv</option>
+                                        <option value="Lviv">Lviv</option>
+                                        <option value="Odessa">Odessa</option>
+                                        <option value="Kharkiv">Kharkiv</option>
+                                        <option value="Lubne">Lubne</option>
+                                    </select>
+                            </div>  
+
+                           <label for="post-office">Post-Office:</label>
+                           <input type="text" name="post-office" id="post-office" required>
+                            
+                            <div class="payment-info">Payment:
+                                      <br>
+                                    <input type="radio" name="payment" id="postpay" checked required>
+                                    <label for="postpay">Pay now</label>
+                                      <br>
+                                    <input type="radio" name="payment" id="card">
+                                    <label for="card">Pay after</label>
+                                      <br>
+                            </div>
+
+                                <div>Comments:
+                                    <textarea name="comments" id="comments " cols="18" rows="1"></textarea>
+                                </div>
+
+                                <div class="quantity">
+                                        <label for="quantity">Quantity:</label>
+                                        <input type="number" name="quantity" id="quantity" min="1" max="10" value="1">
+                                </div>
+                           
+ 
+                           
+        </form> 
+   
+    <script src="./script.js"></script> 
 </body>
 </html>

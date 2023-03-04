@@ -16,19 +16,19 @@ const store = {
                 {
                     name: 'Product',
                     descraption: 'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetti sheets containing Lorem Ipsum passages, and more recently with desktop publishing som',
-                    photo: 'images/happy.png width="100"',
+                    photo: 'images/iphone/12.jpg',
                     price: '$1000',
                 },
                 {
                     name: 'Product',
                     descraption: 'Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search forrem ipsumill uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
-                    //photo: 'images/iphone/11.jpg',
+                    photo: 'images/iphone/11.jpg',
                     price: '$700',
                 },
                 {
                     name: 'Product',
                     descraption: 'Lorem Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default  a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose.',
-                    //photo: 'images/iphone/10.jpg',
+                    photo: 'images/iphone/10.jpg',
                     price: '$800',
                 },
             ]
@@ -38,18 +38,19 @@ const store = {
                     {  
                         name: 'Product',
                         descraption: 'Lorem Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search forl uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometime and the like)..',
-                        //photo: 'images/laptop/black.jpg',
+                        photo: 'images/laptop/black.jpg',
                         price: '$2000',
                     },
                     {
                         name: 'Product',
                         descraption: 'Lorem Content here, content here, making it look like readable English. Many Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search will uncover many web sites still in their infancy. metimes by accident, sometimes on purpose (injected humour and the like).' ,
+                        photo: 'images/laptop/gray.jpg',
                         price: '$1500',
                     },
                     {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-                        //photo: 'images/laptop/red.jpg',
+                        photo: 'images/laptop/red.jpg',
                         price: '$800',
                     }   
                 ]
@@ -59,19 +60,19 @@ const store = {
                    {
                         name: 'Product',
                         descraption: 'Lorem Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose .',
-                        //photo: 'images/tablet/tab1.jpg',
+                        photo: 'images/tablet/tab1.jpg',
                         price: '$500',
                    },
                      {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sContent here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their.',
-                        //photo: 'images/tablet/tab2.jpg',
+                        photo: 'images/tablet/tab2.jpg',
                         price: '$400',
                      },
                      {
                         name: 'Product',
                         descraption: 'Lorem ipsum dolor sContent here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their.',
-                        //photo: 'images/tablet/tab3.jpg',  
+                        photo: 'images/tablet/tab3.jpg',  
                         price: '$300',
                      }
                ]
@@ -112,7 +113,7 @@ function productList(products){
         const productImg = document.createElement('img');
             productImg.classList.add('product-img');
             productImg.src = product.photo;
-            const productPrice = document.createElement('div');
+        const productPrice = document.createElement('div');
             productPrice.classList.add('product-price');
             productPrice.textContent = product.price;
             productItem.append(productImg);
@@ -137,7 +138,7 @@ function productInfo(product){
         productDescraption.textContent = product.descraption;
     const productBuy = document.createElement('button');
         productBuy.classList.add('product-buy');
-        productBuy.textContent = 'Купити';
+        productBuy.textContent = 'Buy product';
         productBuy.addEventListener('click', () => {
             buyProduct(product);
         });
@@ -147,9 +148,10 @@ function productInfo(product){
     divPage.append(productBuy);
 }
 
+
 function buyProduct(product){
     divPage.innerHTML = '';
-    alert (`Ви купили ${product.name}`);
+    alert (`You buy this ${product.name}`);
 }
 for (const category in store.categories) {
     addNavigation(category);

@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background-color: aqua;
+    margin: 5px;    
+}
+
+.item-container {
+    padding: 50px, 30px;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid rgb(226, 121, 121); 
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
