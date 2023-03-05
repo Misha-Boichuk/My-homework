@@ -176,13 +176,14 @@ const store = {
             form.classList.remove('d-block');
            form.classList.add('d-none');
 
-           const requiredFields = document.querySelectorAll('input[required]');
-
+           const requiredFields = document.querySelectorAll('input, city, payment, textarea');
+              
            const order = {};
    
            let isValid = true;
    
            requiredFields.forEach(field => {
+           
                if (field.value === '') {
                    isValid = false;
                    field.classList.add('error');
@@ -190,10 +191,17 @@ const store = {
                    field.classList.remove('error');
                    order[field.name] = field.value;
                }
+    
+               if (city.value === '') {
+                   isValid = false;
+                   city.classList.add('error');
+                } else {
+                    city.classList.remove('error');
+                    order[city.name] = city.value;
+                }    
            });
-           if (!isValid) {
-               return;
-           }
+
+
            
    
 

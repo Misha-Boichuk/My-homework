@@ -107,21 +107,21 @@ form button:hover {
     display: none;
 } 
 
-
-
-
 table{
-    margin-left: 100px;
-    width: 50%;
-    height: 40%;
-    border-radius: 10px;
+    
+    background-color: #e0d5aa;
+    /* margin-left: 100px; */
+    width: 40%;
+    height: 50%;
+    border-radius: 8px;
 }
 
 table,
  th, 
  td , 
  tr {
-    
+    margin: top;
+    margin-left: 400px;
     border: 1px solid black;
     padding: 5px;
     text-align: center;
