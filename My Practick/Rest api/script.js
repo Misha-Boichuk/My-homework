@@ -12,7 +12,7 @@ const getBase64 = file => {
 };
 
 
-// API 
+// API    25 Заняття  - REST API продовження
 const API = 'https://63ed161bf1ec53805dd8d642.mockapi.io';
 
 async function controller(mathod, action, body) {

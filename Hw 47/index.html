@@ -11,22 +11,22 @@
   
 	<form class="heroes__form" id="heroesForm">
 		<label>
-			Name Surname: <input type="text" placeholder="Iron Man" value="Iron Man" data-name="heroName">
+			Name Surname: <input type="text" placeholder="Iron Man" value="Iron Man" id="heroName">
 		</label>
 		<label>
-			Comics: <select data-name="heroComics">
+			Comics: <select data-name="heroComics" id="comics">
 				<option value="Marvel">Marvel</option>
 				<option value="DC">DC</option>
 			</select>
 		</label>
 		<label>
 			Favourite: 
-			<div class="heroFavouriteInput">
+			<div class="heroFavouriteInput" id="favourite'">
 				<input type="checkbox" data-name="heroFavourite">
 			</div>
 		</label>
 
-		<button>Add Hero</button>
+		<button class="btn">Add Hero</button>
 	</form>
 
 	<table class="heroes__table" id="heroesTable">
@@ -47,7 +47,7 @@
 						Favourite: <input type="checkbox">
 					</label>
 				</td>
-				<td><button>Delete</button></td>
+				<td><button class="delete">Delete</button></td>
 			</tr>
 		</tbody>
 	</table>
