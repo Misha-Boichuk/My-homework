@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,15 +9,15 @@
 </head>
 <body>
   
-	<form class="heroes__form" id="heroesForm" action="#">
+	<form class="heroes__form" id="heroesForm">
 		<label>
-			Name Surname: <input type="text" placeholder="Iron Man" value="Iron Man" id="heroName">
+			Name Surname: <input type="text" id="heroName" placeholder="Iron Man" value="Iron Man" >
 		</label>
 		<label>
-			Comics: <select data-name="heroComics" id="hereComics">
-				<!-- <option value="Marvel">Marvel</option>
+			Comics: <select data-name="heroComics" id="heroComics">
+				<option value="Marvel">Marvel</option>
 				<option value="DC">DC</option>
-				<option value="Zone Comix">Zone Comix</option> -->
+				<option value="Zone Comix">Zone Comix</option>
 			</select>
 		</label>
 		<label>
@@ -27,7 +27,7 @@
 			</div>
 		</label>
 
-		<button type="button" class="sendBtn">Add Hero</button>
+		<button type="button" id="Btn">Add Hero</button>
 	</form>
 
 	<table class="heroes__table" id="heroesTable">
@@ -39,7 +39,7 @@
 				<th>Actions</th>
 			</tr>
 		</thead>
-		<!-- <tbody>
+		<tbody>
 			<tr>
 				<td>Iron Man</td>
 				<td>Marvel</td>
@@ -50,9 +50,57 @@
 				</td>
 				<td><button class="delete">Delete</button></td>
 			</tr>
-		</tbody> -->
+		</tbody>
 	</table>
 
     <script src="./script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document 47 Heroes</title>
+</head>
+<body>
+	  <form id="add-hero-form">
+		<label for="hero-name">Name:</label>
+		<input type="text" id="hero-name" required>
+	  
+		<label for="hero-surname">Surname:</label>
+		<input type="text" id="hero-surname" required>
+	  
+		<label for="hero-comics">Comics:</label>
+		<select id="hero-comics" required>
+							  <option value="Marvel">Marvel</option>
+		  <option value="DC">DC</option>
+		  <option value="Zone Comix">Zone Comix</option>
+		</select>
+	  
+		<label for="hero-favorite">Favorite:</label>
+		<input type="checkbox" id="hero-favorite">
+	  
+		<button type="submit">Add Hero</button>
+	  </form>
+	  <br>
+	  <table id="heroes-table">
+		<thead>
+		  <tr>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Comics</th>		
+			<th>Favorite</th>
+			<th>Actions</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<!-- <td><button class="button">Delete</button></td> -->
+		</tbody>
+		 
+	  </table>
+    <script src="./script.js"></script>	  
 </body>
 </html>
