@@ -9,24 +9,25 @@
 </head>
 <body>
   
-	<form class="heroes__form" id="heroesForm">
+	<form class="heroes__form" id="heroesForm" action="#">
 		<label>
 			Name Surname: <input type="text" placeholder="Iron Man" value="Iron Man" id="heroName">
 		</label>
 		<label>
-			Comics: <select data-name="heroComics" id="comics">
-				<option value="Marvel">Marvel</option>
+			Comics: <select data-name="heroComics" id="hereComics">
+				<!-- <option value="Marvel">Marvel</option>
 				<option value="DC">DC</option>
+				<option value="Zone Comix">Zone Comix</option> -->
 			</select>
 		</label>
 		<label>
-			Favourite: 
-			<div class="heroFavouriteInput" id="favourite'">
-				<input type="checkbox" data-name="heroFavourite">
+			Favorite: 
+			<div class="heroFavouriteInput" >
+				<input type="checkbox" id="heroFavourite" data-name="heroFavorite">
 			</div>
 		</label>
 
-		<button class="btn">Add Hero</button>
+		<button type="button" class="sendBtn">Add Hero</button>
 	</form>
 
 	<table class="heroes__table" id="heroesTable">
@@ -34,22 +35,22 @@
 			<tr>
 				<th>Name Surname</th>
 				<th>Comics</th>
-				<th>Favourite</th>
+				<th>Favorite</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
-		<tbody>
+		<!-- <tbody>
 			<tr>
 				<td>Iron Man</td>
 				<td>Marvel</td>
 				<td>
 					<label class="heroFavouriteInput">
-						Favourite: <input type="checkbox">
+						Favorite: <input type="checkbox">
 					</label>
 				</td>
 				<td><button class="delete">Delete</button></td>
 			</tr>
-		</tbody>
+		</tbody> -->
 	</table>
 
     <script src="./script.js"></script>
