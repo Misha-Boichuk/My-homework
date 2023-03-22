@@ -1,40 +1,49 @@
-.heroes__form{
-	background: #F8F8F8;
+#add-hero-form{
+	background: #f0b8b8;
     display: inline-flex;
-    padding: 10px 20px;
-    border-radius: 3px;
+    padding: 10px 10px;
+    border-radius: 10px;
     margin-bottom: 10px;
+	font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	
+	font-size: 18px;
 }
 
-.heroes__form label{
+#add-hero-form label{
 	display: flex;
 	align-items: center;
-	margin-right: 15px;
+	margin-right: 10px;
 }
 
-.heroes__form input, .heroes__form select{
+#add-hero-form input, select{
 	margin-left: 5px;
 }
 
-.heroes__table{
+#heroes-table{
 	border-collapse: collapse;
 }
 
 th, td{
-	border: 1px solid #F8F8F8;
-	padding: 5px 8px;
+	border: 1px solid #e8c7c7;
+	padding: 10px 20px;
 }
 
 button{
-	background: #8EA7FF;
+	background: #4568e6;
 	border: none;
 	border-radius: 3px;
-	padding: 10px 40px;
-	color: white;
+	padding: 10px 20px;
+	color: rgb(26, 23, 23);
 	cursor: pointer;
 }
 
-label.heroFavouriteInput{
-	display: flex;
-	align-items: center;
+button:hover{
+	background: #8e2c84;
+}
+
+.surname, 
+.name,
+.comics,
+.fav{
+	margin-left: 9px;
 }
