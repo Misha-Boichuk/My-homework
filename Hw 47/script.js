@@ -237,26 +237,49 @@ const favoriteCheckbox = document.createElement('input');
 
 const deleteCell = document.createElement('td');
 const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', () => {
+             fetch(`https://640e2c43b07afc3b0dc12d44.mockapi.io/heroes/${hero.id}`, {
+                     method: 'DELETE'
+             })
+                  .then(response => {
+                           if (!response.ok) {
+                                throw new Error('Failed to delete hero');
+                           }
+                     })
 
-  deleteButton.textContent = 'Delete';
-  deleteButton.addEventListener('click', () => {
-      fetch(`https://640e2c43b07afc3b0dc12d44.mockapi.io/${hero.id}`, {
-            method:  'DELETE'   
-       })
-        .then(response => {
-             if (!response.ok) {
-               throw new Error('Failed to delete hero');
-           }
-      })
-        .then(() => row.remove())
-        .catch(error => console.error(error));
-   });
+                  .then(() => {
+                              row.remove();
+                        })
+                  .catch(error => console.error(error));
+      });
+      deleteCell.append(deleteButton);
+      row.append(deleteCell);
 
-deleteCell.append(deleteButton);
-row.append(deleteCell);
-
-const table = document.getElementById('heroes-table');
-      table.append(row);
+      document.getElementById('heroes-table').append(row);
 })
-      .catch(error => console.error(error));
+.catch(error => console.error(error));
 });
+
+const heroesTable = document.getElementById('heroes-table');
+      heroesTable.addEventListener('click', e => {
+      if (e.target.tagName !== 'BUTTON') {
+      return;
+      }
+      const heroId = e.target.closest('tr').dataset.id;
+      fetch(`https://640e2c43b07afc3b0dc12d44.mockapi.io/heroes/${heroId}`, {
+      method: 'DELETE'
+      })
+      .then(response => {
+      if (!response.ok) {
+      throw new Error('Failed to delete hero');
+      }
+      })
+      .then(() => {
+      e.target.closest('tr').remove();
+      }
+      )
+      .catch(error => console.error(error));
+      });
+
+      
