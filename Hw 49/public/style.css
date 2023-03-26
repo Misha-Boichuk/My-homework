@@ -1,0 +1,8 @@
+ul {
+    list-style: none;
+    padding: 30px;
+    margin: 20;
+    background-color: rgb(222, 195, 159);
+    font-size: 18px;
+   color: rgb(17, 0, 255);
+}
