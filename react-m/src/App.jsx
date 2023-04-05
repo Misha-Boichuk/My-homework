@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 import Header from './components/Templates/Header';
 import { Grid, Box, styled, } from '@mui/material';
 import './App.css';
@@ -34,11 +34,11 @@ const Body = styled(Box)(() => ({
     color: 'white',
   }));
 
-
-function App() {
-  return (
-    <div className='App'>
-       <Grid container>
+export default  class App extends Component {
+  render() {
+    return (
+      <div className='App'>
+        <Grid container>
           <Grid item lg={3}>
             <HeaderWrapper />
           </Grid>
@@ -49,8 +49,8 @@ function App() {
           </Grid>
           <Grid item lg={3}>
             <NavBarWrapper />
-              <NavBar />
-            <NavBarWrapper />    
+            <NavBar />
+            <NavBarWrapper />
           </Grid>
           <Grid item lg={9}>
             <Body>
@@ -58,13 +58,12 @@ function App() {
             </Body>
           </Grid>
           <Grid item lg={12}>
-            <FooterWrapper />
+            <FooterWrapper>
               <Footer />
-            <FooterWrapper />    
+            </FooterWrapper>
+          </Grid>
         </Grid>
-      </Grid>
-    </div>
-  );
+      </div>
+    );
+  }
 }
-
-export default App;
