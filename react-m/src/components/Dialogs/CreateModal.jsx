@@ -1,19 +1,17 @@
 import * as React from 'react';
 import {
-    Dialog,
-    DialogActions,
-    Card,
-    CardContent,
-    CardMedia,
-    Button,
-    Typography,
+  Dialog,
+  DialogActions,
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
 } from '@mui/material';
 
-
 export default function CreateModal({
-    open, handleOnClose, imageSrc, continentName, description, country,
+  open, handleOnClose, imageSrc, continentName, description, country,
 }) {
-
   return (
     <div>
         <Dialog
@@ -22,7 +20,7 @@ export default function CreateModal({
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
          >
-                <Card sx={{ width: '100%'}}>
+                <Card sx={{ width: '100%' }}>
                     <CardMedia
                         sx={{ height: 140 }}
                         image={imageSrc}
