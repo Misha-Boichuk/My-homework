@@ -16,7 +16,7 @@ export default function NavBar() {
   return (
     <Wrap className='wrap' >
       <Typography variant='h5' component='h5'>
-        <Link to='/tripmydream/home'>HomePage</Link><br />
+        <Link to='/tripmydream/'>HomePage</Link><br />
       <TextField
         type='text'
         placeholder='Search'
