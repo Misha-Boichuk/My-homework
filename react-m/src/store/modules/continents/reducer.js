@@ -13,7 +13,6 @@ export const continentsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(thunks.fetchContinents.fulfilled, (state, { payload }) => {
-      console.log(payload);
       state.continents = payload;
     });
   },
