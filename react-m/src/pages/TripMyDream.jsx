@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Box, styled } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
 import ContinentCard from '../components/ContinentCard';
-import { continents } from '../api';
+import { continentsThunks } from '../store/modules/continents';
 
 const ContinentWrapper = styled(Box)(() => ({
   display: 'flex',
@@ -10,13 +11,12 @@ const ContinentWrapper = styled(Box)(() => ({
 }));
 
 export default function TripMyDream() {
-  const [continentsData, setContinents] = useState([]);
+  const { continents } = useSelector((state) => state.continentsReducer);
+  const dispatch = useDispatch();
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await continents.fetch();
-        setContinents(data);
-        console.log(data);
+        await dispatch(continentsThunks.fetchContinents());
       } catch (err) {
         console.log(err);
       }
@@ -25,7 +25,7 @@ export default function TripMyDream() {
 
   return (
         <ContinentWrapper>
-            {continentsData.map((continent) => (
+            {continents.map((continent) => (
                 <ContinentCard
                     key={continent.key}
                     continentName={continent.continentName}
