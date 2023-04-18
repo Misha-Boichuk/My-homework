@@ -16,9 +16,9 @@ export default function ContinentCard({
 
   return (
     <>
-      <Card sx={{ maxWidth: 345, marginBottom: '25px' }}>
+      <Card sx={{ maxWidth: 300, marginBottom: '15px' }}>
         <CardMedia
-            sx={{ height: 140 }}
+            sx={{ height: 100 }}
             image={imageSrc}
             title='green iguana'
         />

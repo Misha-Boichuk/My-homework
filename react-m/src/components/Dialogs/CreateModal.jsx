@@ -34,7 +34,7 @@ export default function CreateModal({
                             {description}
                         </Typography>
                         <Typography variant='body2' color='text.main'>
-                           {country.join(', ')}
+                           {country}
                         </Typography>
                     </CardContent>
                 </Card>

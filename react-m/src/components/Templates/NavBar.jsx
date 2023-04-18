@@ -1,18 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   styled,
   Box,
   Typography,
   TextField,
 } from '@mui/material';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { countryActions } from '../../store/modules/countries';
 
 const Wrap = styled(Box)(() => ({
-  backgroundColor: 'rgb(111,135,255)',
   padding: '20px',
 }));
 
 export default function NavBar() {
+  const dispatch = useDispatch();
+  const handleChangeSearch = (event) => {
+    dispatch(countryActions.filterCountries({ search: event.target.value }));
+  };
+
   return (
     <Wrap className='wrap' >
       <Typography variant='h5' component='h5'>
@@ -20,6 +26,7 @@ export default function NavBar() {
       <TextField
         type='text'
         placeholder='Search'
+        onChange={handleChangeSearch}
       />
       </Typography><br />
       <Typography variant='h4' component='h4'>
